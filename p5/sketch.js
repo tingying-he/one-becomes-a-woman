@@ -125,7 +125,7 @@ function draw() {
     let currentTime = millis();
     console.log(currentTime);
     // let timeInterval = currentTime-changeTime;
-    if( currentTime > 5000 && currentTime <10000){
+    if( currentTime > 5000 ){//&& currentTime <10000
         female.display(
             femaleImg1
             );    
