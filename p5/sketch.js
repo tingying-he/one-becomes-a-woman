@@ -4,21 +4,26 @@ var eyes = [];
 var numEyes = 100;
 let eyeImg;
 let femaleImg;
+var female;
 let pg;//mouse trace
+
+let changeTime=0;
+
 
 
 function preload() {
   eyeImg = loadImage('images/eye.png');   
-  femaleImg = loadImage('images/female.png');   
+  femaleImg0 = loadImage('images/female0.png');
+  femaleImg1 = loadImage('images/female2.png');
 }
 
 // Setup
 function setup() {
-    createCanvas(1200, 400);
-colorMode(RGB,255,255,255,1);
+    createCanvas(1200, 800);
+    colorMode(RGB,255,255,255,1);
   
     // Set Background
-    background(0, 0, 0);
+    //background(0, 0, 0);
 
     // Create Eyes
     for (i = 0; i < numEyes; i++) {    
@@ -26,6 +31,8 @@ colorMode(RGB,255,255,255,1);
      var y = random(height);      
      eyes[i] = new Eye(x, y);
     }
+
+    female = new Female(femaleImg0);
   
     pg = createGraphics(1000, 1000);
 }
@@ -97,15 +104,35 @@ function Eye(x, y) {
         }
     }
 }
-
+//draw body
+function Female(img){ 
+    this.display = function(img){
+        console.log(img);
+        image(img, 500, 0, 290, 792);
+        console.log("Female is called");
+    }
+   
+}
 
 // Update Canvas
 function draw() {
     clear();
   
     background(0,0,0);
-    // image(img, 0, 0, 640, 853);
+    console.log(femaleImg0);
+    female.display(femaleImg0);
 
+    let currentTime = millis();
+    console.log(currentTime);
+    // let timeInterval = currentTime-changeTime;
+    if( currentTime > 5000 ){//&& currentTime <10000
+        female.display(
+            femaleImg1
+            );    
+        // changeTime = currentTime;
+    }
+    
+    // console.log(female.display());
   
   pg.stroke(255,255,0)
   pg.line(mouseX, mouseY, pmouseX, pmouseY);
@@ -120,4 +147,5 @@ function draw() {
     }
   
 }
+
 

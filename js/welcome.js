@@ -7,6 +7,6 @@ btn.onclick=function(){
         window.localStorage.setItem('val',ipt)
         location.href="./maleView.html"
     }else{
-        alert('您输入的值不能为空')
+        alert('Please enter a word')
     }
 }
