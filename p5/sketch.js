@@ -4,6 +4,7 @@ var eyes = [];
 var numEyes = 100;
 let eyeImg;
 let femaleImg;
+var female;
 let pg;//mouse trace
 
 
@@ -14,11 +15,11 @@ function preload() {
 
 // Setup
 function setup() {
-    createCanvas(1200, 400);
-colorMode(RGB,255,255,255,1);
+    createCanvas(1200, 800);
+    colorMode(RGB,255,255,255,1);
   
     // Set Background
-    background(0, 0, 0);
+    //background(0, 0, 0);
 
     // Create Eyes
     for (i = 0; i < numEyes; i++) {    
@@ -26,6 +27,8 @@ colorMode(RGB,255,255,255,1);
      var y = random(height);      
      eyes[i] = new Eye(x, y);
     }
+
+    female = new Female(femaleImg);
   
     pg = createGraphics(1000, 1000);
 }
@@ -97,14 +100,25 @@ function Eye(x, y) {
         }
     }
 }
-
+//draw body
+function Female(img){
+    this.display = function(){
+        console.log(img);
+        image(img, 500, 0, 290, 792);
+        console.log("bodyShape is called");
+    }
+   
+}
 
 // Update Canvas
 function draw() {
     clear();
   
     background(0,0,0);
-    // image(img, 0, 0, 640, 853);
+    
+
+    female.display();
+    // console.log(female.display());
 
   
   pg.stroke(255,255,0)
@@ -120,4 +134,5 @@ function draw() {
     }
   
 }
+
 
