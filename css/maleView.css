@@ -21,13 +21,17 @@ body,html{
     margin: 0 auto;
 }
 h1{
-    width: 100%;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: normal;
-}
+    position: relative;
+    top: 280px; 
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        font-size: 48px;
+        font-weight: normal;
+        color: #ffffff;
+        font-family: Montserrat;
+    }
 input{
     width:200px;
     height: 30px;
@@ -35,13 +39,11 @@ input{
     display: block;
     padding-left: 8px;
 }
-button{
-    width: 80px;
-    background-color: cornflowerblue;
-    color:#fff;
-    border:none;
-    height: 25px;
-    font-size: 14px;
-    margin: 20px auto;
-    display: block;
+
+iframe{
+    border:0;
+    /* cellspacing:0; */
+    border-style: none;
+    width: 100%;
+     height: 100%;
 }
