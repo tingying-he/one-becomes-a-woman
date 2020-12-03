@@ -89,7 +89,7 @@ function Eye(x, y) {
       
         translate(this.pos.x, this.pos.y);
         imageMode(CENTER);
-        image(eyeImg,this.size,this.size,100,100);
+        image(eyeImg,this.size,this.size,50,50);
         pop();
     }
 
@@ -112,7 +112,6 @@ function Female(img){
     this.display = function(img){
         console.log(img);
         image(img, 500, 0, 290, 792);
-        console.log("Female is called");
     }
    
 }
@@ -122,7 +121,6 @@ function draw() {
     clear();
 
     background(0, 0, 0);
-    console.log(femaleImg1);
     female.display(femaleImg1);
 
     let currentTime = millis();
