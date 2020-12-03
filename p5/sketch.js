@@ -1,6 +1,6 @@
 // Global Vars
 var reset = true;
-var a = 0;
+var comment = 0;
 let changeTime = 0;
 
 var streams = [];
@@ -46,27 +46,10 @@ function Symbol(x, y, speed, first, opacity) {
     this.first = first;
     this.opacity = opacity;
 
-    // this.switchInterval = round(random(2, 25));
-
-    // this.setToRandomSymbol = function () {
-    //     var charType = round(random(0, 5));
-    //     if (frameCount % this.switchInterval == 0) {
-    //         if (charType > 1) {
-    //             // set it to Katakana
-    //             this.value = String.fromCharCode(
-    //                 0x30A0 + floor(random(0, 97))
-    //             );
-    //         } else {
-    //             // set it to numeric
-    //             this.value = floor(random(0, 10));
-    //         }
-    //     }
-    // }
-
     this.setToRandomSymbol = function(){
         // var a = round(random(0,comments.length-1))
-        this.value = comments[a%6]
-        a = a + 1;
+        this.value = comments[comment%comments.length]
+        comment = comment + 1;
         // console.log(a);
     }
 
@@ -78,8 +61,6 @@ function Symbol(x, y, speed, first, opacity) {
 
 function Stream() {
     this.symbols = [];
-    // this.totalSymbols = round(random(20, 50));
-    // this.totalSymbols = 0;
     this.speed = random(1,3); 
 
     this.generateSymbols = function (x, y) {
@@ -94,23 +75,6 @@ function Stream() {
         );
         symbol.setToRandomSymbol();
         this.symbols.push(symbol);
-        // opacity -= (255 / this.totalSymbols) / fadeInterval;
-        // x -= symbolSize;
-        // first = false;
-        // for (var i = 0; i <= this.totalSymbols; i++) {
-        //     symbol = new Symbol(
-        //         x,
-        //         y,
-        //         this.speed,
-        //         first,
-        //         opacity
-        //     );
-        //     symbol.setToRandomSymbol();
-        //     this.symbols.push(symbol);
-        //     opacity -= (255 / this.totalSymbols) / fadeInterval;
-        //     x -= symbolSize;
-        //     first = false;
-        // }
 
     }
 
