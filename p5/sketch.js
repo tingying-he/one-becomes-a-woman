@@ -147,7 +147,7 @@ function draw() {
 
 
     var target = createVector(mouseX, mouseY);
-    for (i = 0; i < numEyes; i++) {
+    for (i = 0; i < numEyes; i++) { //
         eyes[i].seek(target);
         eyes[i].display();
         eyes[i].update();
