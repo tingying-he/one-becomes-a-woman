@@ -12,9 +12,12 @@ let changeTime=0;
 
 
 function preload() {
-  eyeImg = loadImage('images/eye.png');   
-  femaleImg0 = loadImage('images/female0.png');
-  femaleImg1 = loadImage('images/female2.png');
+    eyeImg = loadImage('images/eye.png');
+    femaleImg1 = loadImage('images/female1.png');
+    femaleImg2 = loadImage('images/female2.png');
+    femaleImg3 = loadImage('images/female3.png');
+    femaleImg4 = loadImage('images/female4.png');
+
 }
 
 // Setup
@@ -32,8 +35,13 @@ function setup() {
      eyes[i] = new Eye(x, y);
     }
 
+<<<<<<< Updated upstream
     female = new Female(femaleImg0);
   
+=======
+    female = new Female(femaleImg1);
+
+>>>>>>> Stashed changes
     pg = createGraphics(1000, 1000);
 }
 
@@ -117,27 +125,33 @@ function Female(img){
 // Update Canvas
 function draw() {
     clear();
-  
-    background(0,0,0);
-    console.log(femaleImg0);
-    female.display(femaleImg0);
+
+    background(0, 0, 0);
+    console.log(femaleImg1);
+    female.display(femaleImg1);
 
     let currentTime = millis();
     console.log(currentTime);
-    // let timeInterval = currentTime-changeTime;
-    if( currentTime > 5000 ){//&& currentTime <10000
+
+    if (currentTime > 7000 && currentTime <14000) {
         female.display(
-            femaleImg1
-            );    
-        // changeTime = currentTime;
+            femaleImg2
+        );
+    } else if (currentTime > 14000 && currentTime <21000){
+        female.display(
+            femaleImg3
+        );
+    }else if (currentTime > 21000){
+        female.display(
+            femaleImg4
+        );
     }
-    
-    // console.log(female.display());
-  
-  pg.stroke(255,255,0)
-  pg.line(mouseX, mouseY, pmouseX, pmouseY);
-  image(pg, 0, 0);
-  
+
+    pg.stroke(255, 0, 184,50);
+    pg.strokeWeight(6);
+    pg.line(mouseX, mouseY, pmouseX, pmouseY);
+    image(pg, 0, 0);
+
 
     var target = createVector(mouseX, mouseY);
     for (i = 0; i < numEyes; i++) {
