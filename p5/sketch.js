@@ -35,13 +35,8 @@ function setup() {
      eyes[i] = new Eye(x, y);
     }
 
-<<<<<<< Updated upstream
-    female = new Female(femaleImg0);
-  
-=======
     female = new Female(femaleImg1);
 
->>>>>>> Stashed changes
     pg = createGraphics(1000, 1000);
 }
 
