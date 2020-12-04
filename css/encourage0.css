@@ -110,3 +110,9 @@ p{
         color: #ffffff;
         font-family: Montserrat;
 }
+
+img {
+    position: absolute;
+    opacity: 0;
+    filter: alpha(opacity=40);
+}
