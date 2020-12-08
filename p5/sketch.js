@@ -1,7 +1,7 @@
 // Global Vars
 var reset = true;
 var eyes = [];
-var numEyes = 5000;
+var numEyes = 300;
 let eyeImg;
 let femaleImg;
 var female;
@@ -9,16 +9,19 @@ let pg;//mouse trace
 
 let changeTime = 0;
 
+let video;
 
 
 function preload() {
     eyeImg = loadImage('images/eye.png');
     femaleImg0 = loadImage('images/female0.png');
     femaleImg1 = loadImage('images/female2.png');
+    video = createVideo(['video/test.mp4']);
 }
 
 // Setup
 function setup() {
+    // noCanvas();
     createCanvas(1200, 800);
     // colorMode(RGB, 255, 255, 255, 1);
 
@@ -33,6 +36,8 @@ function setup() {
     }
 
     female = new Female(femaleImg0);
+    
+    video.hide();
 
     pg = createGraphics(1000, 1000);
 }
@@ -116,23 +121,31 @@ function Female(img) {
 
 // Update Canvas
 function draw() {
-    clear();
+    // clear();
 
-    background(0, 0, 0);
-    console.log(femaleImg0);
-    female.display(femaleImg0);
+    // background(0, 0, 0);
+    // console.log(femaleImg0);
+    // female.display(femaleImg0);
 
     let currentTime = millis();
     console.log(currentTime);
     // let timeInterval = currentTime-changeTime;
-    if (currentTime > 5000) {//&& currentTime <10000
-        female.display(
-            femaleImg1
-        );
+    // if (currentTime > 5000) {//&& currentTime <10000
+    //     female.display(
+    //         femaleImg1
+    //     );
+    //     // changeTime = currentTime;
+    // }
+
+    // console.log(female.display());
+
+    image(video, 10, 10);
+    video.play();
+    if (currentTime > 25000) {//&& currentTime <10000
+        video.stop();
         // changeTime = currentTime;
     }
 
-    // console.log(female.display());
 
     pg.stroke(255, 255, 0)
     pg.line(mouseX, mouseY, pmouseX, pmouseY);
@@ -140,7 +153,7 @@ function draw() {
 
 
     var target = createVector(mouseX, mouseY);
-    for (i = 0; i < currentTime / 100 * 3; i++) {
+    for (i = 0; i < numEyes; i++) {
         eyes[i].seek(target);
         eyes[i].display();
         eyes[i].update();
