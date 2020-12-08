@@ -121,7 +121,7 @@ function Female(img) {
 
 // Update Canvas
 function draw() {
-    // clear();
+    clear();
 
     // background(0, 0, 0);
     // console.log(femaleImg0);
