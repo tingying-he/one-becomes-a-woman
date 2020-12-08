@@ -37,7 +37,9 @@ function setup() {
 
     female = new Female(femaleImg0);
     
-    video.hide();
+    // video.hide();
+    video.mouseOver(playVideo);
+    video.mouseOut(pauseVideo);
 
     pg = createGraphics(1000, 1000);
 }
@@ -127,8 +129,8 @@ function draw() {
     // console.log(femaleImg0);
     // female.display(femaleImg0);
 
-    let currentTime = millis();
-    console.log(currentTime);
+    // let currentTime = millis();
+    // console.log(currentTime);
     // let timeInterval = currentTime-changeTime;
     // if (currentTime > 5000) {//&& currentTime <10000
     //     female.display(
@@ -140,11 +142,12 @@ function draw() {
     // console.log(female.display());
 
     image(video, 10, 10);
-    video.play();
-    if (currentTime > 25000) {//&& currentTime <10000
-        video.stop();
-        // changeTime = currentTime;
-    }
+    // video.mouseOver(playVideo);
+    // video.play();
+    // if (currentTime > 25000) {//&& currentTime <10000
+    //     video.stop();
+    //     // changeTime = currentTime;
+    // }
 
 
     pg.stroke(255, 255, 0)
@@ -159,6 +162,17 @@ function draw() {
         eyes[i].update();
     }
 
+}
+
+function playVideo(){
+    video.play();
+    console.log("videoplay is called");
+}
+
+
+function pauseVideo(){
+    video.pause();
+    console.log("videopause is called");
 }
 
 
