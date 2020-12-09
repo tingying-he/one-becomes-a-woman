@@ -1,19 +1,18 @@
 // Global Vars
 var reset = true;
 var comment = 0;
-let changeTime = 0;
 
 var streams = [];
 var fadeInterval = 1.6;
 var symbolSize = 14;
 var comments = [
-                "1He gives his harness bells a shake",
-                "2To ask if there is some mistake.",
-                "3The only other sound’s the sweep",
-                "4Of easy wind and downy flake.",
-                "5The woods are lovely, dark, and deep,",
-                "6But I have promises to keep,",
-                "7And miles to go before I sleep,"
+                "Why do women let go of bodies. Find a gym or call Jenny Craig. Gress",
+                "She has a prosthetic leg, and just flirting with everyone",
+                "OMG, such a fat pig",
+                "Why you're even building a career",
+                "You get fat these days",
+                "What did your husband think about this",
+                "You dress is so short, you shouln't wear it"
                 ];
 
 
@@ -27,13 +26,13 @@ function setup() {
     for (var i = 0; i <= height / symbolSize; i++) {
         var stream = new Stream();
         // stream.generateSymbols(random(-2000, 0), y);
-        stream.generateSymbols(random(0, 2000), y);
+        stream.generateSymbols(random(0, 2000), y);//2000
         streams.push(stream);
         y += symbolSize
     }
 
     // textFont('Consolas');
-    // textSize(symbolSize);
+    textSize(20);
 }
 
 
@@ -98,7 +97,7 @@ function Stream() {
 // Update Canvas
 function draw() {
 
-    background(0, 150);
+    background(223,222,212, 500);//150
 
     streams.forEach(function (stream) {
         stream.render();
