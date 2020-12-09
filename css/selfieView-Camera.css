@@ -5,10 +5,10 @@ html{
 
 body {
     background-color: black;
-    background-image: url('../images/selfie.gif');
-    background-size:    auto 100%;                  
+    /* background-image: url('../images/selfie.gif'); */
+    /* background-size:    auto 100%;                  
     background-repeat:   no-repeat;
-    background-position: center center;  
+    background-position: center center;   */
     width: 100%;
     height: 100%;
 }
@@ -26,18 +26,7 @@ top: 600px;
     font-family: Montserrat;
 }
 
-p{
-    position: relative;
-    top: 450px; 
-        width: 100%;
-        height: 35px;
-        line-height: 35px;
-        text-align: center;
-        font-size: 28px;
-        font-weight: lighter;
-        color: #ffffff;
-        font-family: Montserrat;
-    }
+
 
 #btn {
     position: relative;
@@ -56,8 +45,50 @@ p{
     text-decoration: underline; 
 }
 
+
 #videoElement {
-	width: 100%;
-	height: 100%;
-	background-color: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 0;
+    
 }
+
+
+.video-box #videoElement{
+	display: inline-block;
+  vertical-align: baseline;
+}
+
+.video-box .video-img{
+	position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    z-index: 999;
+    background: url(../images/selfie-camera.png) no-repeat;
+    background-size: auto 100%;
+}
+
+p{
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 600px;
+        /* width: 100%; */
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 90px;
+        font-weight: bold;
+        color: #ffffff;
+        font-family: Montserrat;
+        z-index: 999;
+    }
+

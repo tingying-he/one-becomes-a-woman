@@ -17,3 +17,8 @@ if (navigator.mediaDevices.getUserMedia) {
       console.log("Something went wrong!");
     });
 }
+
+
+var val=window.localStorage.getItem('val'),
+    p=document.getElementById('p');
+    p.innerText=val
