@@ -7,8 +7,6 @@ let femaleImg;
 var female;
 let pg;//mouse trace
 
-let changeTime = 0;
-
 let video;
 
 
@@ -34,10 +32,8 @@ function setup() {
         var y = random(height);
         eyes[i] = new Eye(x, y);
     }
-
-    female = new Female(femaleImg0);
     
-    // video.hide();
+    video.hide();
     video.mouseOver(playVideo);
     video.mouseOut(pauseVideo);
 
@@ -111,43 +107,18 @@ function Eye(x, y) {
         }
     }
 }
-//draw body
-function Female(img) {
-    this.display = function (img) {
-        console.log(img);
-        image(img, 500, 0, 290, 792);
-        console.log("Female is called");
-    }
-
-}
 
 // Update Canvas
 function draw() {
     clear();
 
     // background(0, 0, 0);
-    // console.log(femaleImg0);
-    // female.display(femaleImg0);
+    
 
-    // let currentTime = millis();
-    // console.log(currentTime);
-    // let timeInterval = currentTime-changeTime;
-    // if (currentTime > 5000) {//&& currentTime <10000
-    //     female.display(
-    //         femaleImg1
-    //     );
-    //     // changeTime = currentTime;
-    // }
-
-    // console.log(female.display());
-
-    image(video, 10, 10);
-    // video.mouseOver(playVideo);
+    image(video, 0, 0);
+    video.mouseOver(playVideo);
+    video.mouseOut(pauseVideo);
     // video.play();
-    // if (currentTime > 25000) {//&& currentTime <10000
-    //     video.stop();
-    //     // changeTime = currentTime;
-    // }
 
 
     pg.stroke(255, 255, 0)
