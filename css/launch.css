@@ -1,0 +1,45 @@
+body {
+    background-image:url('../images/bg.png');
+}
+
+h1{
+position: relative;
+top: 280px; 
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 48px;
+    font-weight: normal;
+    color: #ffffff;
+    font-family: Montserrat;
+}
+
+p{
+    position: relative;
+    top: 450px; 
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        font-size: 28px;
+        font-weight: lighter;
+        color: #ffffff;
+        font-family: Montserrat;
+    }
+
+#btn {
+    position: relative;
+    top: 500px; 
+    background-color:#AD0053;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Montserrat;
+    font-size: 20px;
+    border-radius:40px;
+    width: 120px;
+    height: 40px;
+}

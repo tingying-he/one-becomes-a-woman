@@ -1,17 +1,20 @@
-// Global Vars
+
 var reset = true;
+
+/* eyes */
 var eyes = [];
-var numEyes = 5000;
+var numEyes = 100;
 let eyeImg;
+
+let femaleVideo
+
 let femaleImg;
 var female;
 let pg;//mouse trace
 
-let changeTime = 0;
+let changeTime=0;
 
-<<<<<<< Updated upstream
-=======
-// let video;
+// let vid;
 
 /* comments */
 var comment = 0;
@@ -27,60 +30,68 @@ var comments = [
                 "6But I have promises to keep,",
                 "7And miles to go before I sleep,"
                 ];
->>>>>>> Stashed changes
 
 
 function preload() {
     eyeImg = loadImage('images/eye.png');
-    femaleImg0 = loadImage('images/female0.png');
-    femaleImg1 = loadImage('images/female2.png');
+    femaleImg1 = loadImage('images/female1.png');
+    femaleImg2 = loadImage('images/female2.png');
+    femaleImg3 = loadImage('images/female3.png');
+    femaleImg4 = loadImage('images/female4.png');
+    
+
 }
 
 // Setup
 function setup() {
-    createCanvas(1200, 800);
-    // colorMode(RGB, 255, 255, 255, 1);
+    createCanvas(window.innerWidth, window.innerHeight);
+    colorMode(RGB,255,255,255,1);
+    // background(0);
 
-    // Set Background
-    //background(0, 0, 0);
-
-    // Create Eyes
-    for (i = 0; i < numEyes; i++) {
-        var x = random(width);
-        var y = random(height);
-        eyes[i] = new Eye(x, y);
-<<<<<<< Updated upstream
+    
+    var y = 0;
+    for (var i = 0; i <= height / symbolSize; i++) {
+        var stream = new Stream();
+        // stream.generateSymbols(random(-2000, 0), y);
+        stream.generateSymbols(random(0, 2000), y);
+        streams.push(stream);
+        y += symbolSize
     }
 
-    female = new Female(femaleImg0);
-
-    pg = createGraphics(1000, 1000);
-=======
+    // textFont('Consolas');
+    // textSize(symbolSize);
+     
+    // Create Eyes
+     for (i = 0; i < numEyes; i++) {    
+        var x = random(width);
+        var y = random(height);      
+        eyes[i] = new Eye(x, y);
        }
    
        female = new Female(femaleImg1);
 
        //hover to control video
-    //    video = createVideo('video/female.mp4');
+    //    vid = createVideo('video/female.mp4');
+    // vid.size(100,300);
+    // vid.position(0,0);
 
     //    video.mouseOver(playVideo);
     //    video.mouseOut(pauseVideo);
    
        pg = createGraphics(1000, 1000);
->>>>>>> Stashed changes
 }
 
-// Particle
+//Particle
 function Eye(x, y) {
-    this.x = x;
-    this.y = y;
+  this.x = x;
+  this.y = y;
 
     // Properties
-    this.size = random(20, 50);
+    this.size = random(5,15);
     this.maxSpeed = random(5, 10);
-    this.maxForce = random(0.01, 4);
+    this.maxForce = random(0.01,4);
     this.mass = this.size; //this.size * this.size * PI;
-
+  
     // Motion
     this.pos = createVector(x, y);
     this.acc = createVector(0, 0);
@@ -88,15 +99,15 @@ function Eye(x, y) {
     this.vel = createVector(random(-initV, initV), random(-initV, initV));
 
     // External Forces
-    this.applyForce = function (force) {
+    this.applyForce = function(force) {
         var f = force.copy();
         f.div(this.mass);
         this.acc.add(f);
     }
 
     // Behaviors
-    this.seek = function (target) {
-        var desired = p5.Vector.sub(target, this.pos);
+    this.seek = function(target) {
+      var desired = p5.Vector.sub(target, this.pos);
         desired.setMag(this.maxSpeed);
         var steering = p5.Vector.sub(desired, this.vel);
         steering.limit(this.maxForce);
@@ -104,27 +115,27 @@ function Eye(x, y) {
     }
 
     // Handle Updates
-    this.update = function () {
+    this.update = function() {
         this.vel.add(this.acc);
         this.pos.add(this.vel);
         this.acc.set(0, 0);
     }
-
-
+  
+  
 
     // Draw
-    this.display = function () {
-
+    this.display = function() {
+        
         push();
-
+      
         translate(this.pos.x, this.pos.y);
         imageMode(CENTER);
-        image(eyeImg, this.size, this.size, this.size, this.size);
+        image(eyeImg,this.size,this.size,50,50);
         pop();
     }
 
-    // Handle Edges
-    this.edges = function () {
+   // Handle Edges
+    this.edges = function() {
         if (this.pos.y > height) {
             this.pos.y = 0 - this.size;
         } else if (this.pos.y < 0) {
@@ -137,60 +148,117 @@ function Eye(x, y) {
         }
     }
 }
+
 //draw body
-function Female(img) {
-    this.display = function (img) {
+function Female(img){ 
+    this.display = function(img){
         console.log(img);
         image(img, 500, 0, 290, 792);
-        console.log("Female is called");
+    }
+   
+}
+
+function Symbol(x, y, speed, first, opacity) {
+    this.x = x;
+    this.y = y;
+    // this.value;
+
+    this.speed = speed;
+    this.first = first;
+    this.opacity = opacity;
+
+    this.setToRandomSymbol = function(){
+        // var a = round(random(0,comments.length-1))
+        this.value = comments[comment%comments.length]
+        comment = comment + 1;
+        // console.log(a);
+    }
+
+    this.rain = function () {
+        this.x = (this.x >= width) ? 0 : this.x += this.speed;
     }
 
 }
 
+function Stream() {
+    this.symbols = [];
+    this.speed = random(1,3); 
+
+    this.generateSymbols = function (x, y) {
+        var opacity = 255;
+        var first = round(random(0, 4)) == 1;
+        symbol = new Symbol(
+            x,
+            y,
+            this.speed,
+            first,
+            opacity
+        );
+        symbol.setToRandomSymbol();
+        this.symbols.push(symbol);
+
+    }
+
+    this.render = function () {
+        
+        this.symbols.forEach(function (symbol) {
+            if (symbol.first) {
+                fill(134, 128, 128, symbol.opacity);  // 134, 128, 128,
+            } else {
+                fill(92, 79, 79, symbol.opacity);  // 92, 79, 79,
+            }
+            text(symbol.value, symbol.x, symbol.y);
+            symbol.rain();
+            // symbol.setToRandomSymbol();
+        });
+    }
+}
+
+
+
 // Update Canvas
 function draw() {
+
+    // background(0, 150);
+    
     clear();
 
     background(0, 0, 0);
-<<<<<<< Updated upstream
-    console.log(femaleImg0);
-    female.display(femaleImg0);
-=======
 
     // image(vid, 10, 10);
 
     female.display(femaleImg1);
->>>>>>> Stashed changes
 
     let currentTime = millis();
     console.log(currentTime);
-    // let timeInterval = currentTime-changeTime;
-    if (currentTime > 5000) {//&& currentTime <10000
+
+    if (currentTime > 7000 && currentTime <14000) {
         female.display(
-            femaleImg1
+            femaleImg2
         );
-        // changeTime = currentTime;
+    } else if (currentTime > 14000 && currentTime <21000){
+        female.display(
+            femaleImg3
+        );
+    }else if (currentTime > 21000){
+        female.display(
+            femaleImg4
+        );
     }
 
-    // console.log(female.display());
-
-    pg.stroke(255, 255, 0)
+    pg.stroke(255, 0, 184,50);
+    pg.strokeWeight(6);
     pg.line(mouseX, mouseY, pmouseX, pmouseY);
     image(pg, 0, 0);
 
 
     var target = createVector(mouseX, mouseY);
-    for (i = 0; i < currentTime / 100 * 3; i++) {
+    for (i = 0; i < numEyes; i++) { //
         eyes[i].seek(target);
         eyes[i].display();
         eyes[i].update();
     }
 
-<<<<<<< Updated upstream
-}
-
-
-=======
     streams.forEach(function (stream) {
         stream.render();
     });
@@ -198,14 +266,13 @@ function draw() {
 }
 
 // function playVideo(){
-//     video.play();
+//     vid.play();
 //     console.log("videoplay is called");
 // }
 
 
 // function pauseVideo(){
-//     video.pause();
+//     vid.pause();
 //     console.log("videopause is called");
 // }
 
->>>>>>> Stashed changes

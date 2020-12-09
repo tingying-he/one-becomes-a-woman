@@ -8,3 +8,4 @@ btn.onclick = function () {
 		location.href = './welcome.html'
 
 }
+
