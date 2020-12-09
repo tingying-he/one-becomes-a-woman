@@ -9,6 +9,25 @@ let pg;//mouse trace
 
 let changeTime = 0;
 
+<<<<<<< Updated upstream
+=======
+// let video;
+
+/* comments */
+var comment = 0;
+var streams = [];
+var fadeInterval = 1.6;
+var symbolSize = 14;
+var comments = [
+                "1He gives his harness bells a shake",
+                "2To ask if there is some mistake.",
+                "3The only other sound’s the sweep",
+                "4Of easy wind and downy flake.",
+                "5The woods are lovely, dark, and deep,",
+                "6But I have promises to keep,",
+                "7And miles to go before I sleep,"
+                ];
+>>>>>>> Stashed changes
 
 
 function preload() {
@@ -30,11 +49,25 @@ function setup() {
         var x = random(width);
         var y = random(height);
         eyes[i] = new Eye(x, y);
+<<<<<<< Updated upstream
     }
 
     female = new Female(femaleImg0);
 
     pg = createGraphics(1000, 1000);
+=======
+       }
+   
+       female = new Female(femaleImg1);
+
+       //hover to control video
+    //    video = createVideo('video/female.mp4');
+
+    //    video.mouseOver(playVideo);
+    //    video.mouseOut(pauseVideo);
+   
+       pg = createGraphics(1000, 1000);
+>>>>>>> Stashed changes
 }
 
 // Particle
@@ -119,8 +152,15 @@ function draw() {
     clear();
 
     background(0, 0, 0);
+<<<<<<< Updated upstream
     console.log(femaleImg0);
     female.display(femaleImg0);
+=======
+
+    // image(vid, 10, 10);
+
+    female.display(femaleImg1);
+>>>>>>> Stashed changes
 
     let currentTime = millis();
     console.log(currentTime);
@@ -146,6 +186,26 @@ function draw() {
         eyes[i].update();
     }
 
+<<<<<<< Updated upstream
 }
 
 
+=======
+    streams.forEach(function (stream) {
+        stream.render();
+    });
+
+}
+
+// function playVideo(){
+//     video.play();
+//     console.log("videoplay is called");
+// }
+
+
+// function pauseVideo(){
+//     video.pause();
+//     console.log("videopause is called");
+// }
+
+>>>>>>> Stashed changes
