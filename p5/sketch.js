@@ -14,6 +14,8 @@ let pg;//mouse trace
 
 let changeTime=0;
 
+let vid;
+
 /* comments */
 var comment = 0;
 var streams = [];
@@ -36,6 +38,7 @@ function preload() {
     femaleImg2 = loadImage('images/female2.png');
     femaleImg3 = loadImage('images/female3.png');
     femaleImg4 = loadImage('images/female4.png');
+    
 
 }
 
@@ -45,6 +48,7 @@ function setup() {
     colorMode(RGB,255,255,255,1);
     // background(0);
 
+    
     var y = 0;
     for (var i = 0; i <= height / symbolSize; i++) {
         var stream = new Stream();
@@ -65,11 +69,19 @@ function setup() {
        }
    
        female = new Female(femaleImg1);
+
+       //hover to control video
+       vid = createVideo('video/female.mp4');
+    vid.size(100,300);
+    vid.position(0,0);
+
+       video.mouseOver(playVideo);
+       video.mouseOut(pauseVideo);
    
        pg = createGraphics(1000, 1000);
 }
 
-Particle
+//Particle
 function Eye(x, y) {
   this.x = x;
   this.y = y;
@@ -212,7 +224,10 @@ function draw() {
     clear();
 
     background(0, 0, 0);
-    female.display(femaleImg1);
+
+    // image(vid, 10, 10);
+
+    // female.display(femaleImg1);
 
     let currentTime = millis();
     console.log(currentTime);
@@ -250,4 +265,14 @@ function draw() {
 
 }
 
+function playVideo(){
+    vid.play();
+    console.log("videoplay is called");
+}
+
+
+function pauseVideo(){
+    vid.pause();
+    console.log("videopause is called");
+}
 
