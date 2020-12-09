@@ -8,6 +8,7 @@ var female;
 let pg;//mouse trace
 
 let video;
+var whisper;
 
 
 function preload() {
@@ -15,6 +16,7 @@ function preload() {
     femaleImg0 = loadImage('images/female0.png');
     femaleImg1 = loadImage('images/female2.png');
     video = createVideo(['video/test.mp4']);
+    whisper = loadSound("sound/whisper.mp3");
 }
 
 // Setup
@@ -32,7 +34,12 @@ function setup() {
         var y = random(height);
         eyes[i] = new Eye(x, y);
     }
+
+    // whisper.play();
+    whisper.loop();
+    whisper.setVolume(0.5);
     
+
     video.hide();
     video.mouseOver(playVideo);
     video.mouseOut(pauseVideo);
@@ -116,8 +123,8 @@ function draw() {
     
 
     image(video, 0, 0);
-    video.mouseOver(playVideo);
-    video.mouseOut(pauseVideo);
+    // video.mouseOver(playVideo);
+    // video.mouseOut(pauseVideo);
     // video.play();
 
 
