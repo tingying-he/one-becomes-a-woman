@@ -61,14 +61,24 @@ video{
     top: 100px;
     left: 40%;
     width:480px;
-    z-index: 2;
+    z-index: 1;
 }
 .comments{
     z-index: 0;
 }
 .eyes{
-    z-index: 1;
+    z-index: 2;
+    /* pointer-events: none; */
 }
 
+#hover{
+    position: absolute;
+    margin: 0;
+    top: 100px;
+    left: 40%;
+    width:480px;
+    height: 1000px;
+    z-index: 3;
+}
 
 
