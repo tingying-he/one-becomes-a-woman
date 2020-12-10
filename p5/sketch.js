@@ -106,7 +106,7 @@ function Eye(x, y) {
     }
 }
 function gifControl(){
-    if(mouseX>600 && mouseX <1100 && mouseY > 100 && mouseY < 1100){
+    if(mouseX>600 && mouseX <1200 && mouseY > 50 && mouseY < 1250){
         gif.play();
     }
     else{
@@ -124,7 +124,7 @@ function draw() {
     pg.strokeWeight(6);
     pg.line(mouseX, mouseY, pmouseX, pmouseY);
     image(pg, 0, 0);
-    image(gif,600,100,500,1000);
+    image(gif,600,50,600,1200);
     this.gifControl();
 
 
