@@ -6,7 +6,11 @@ nextBtn.onclick=function(){
     if(ipt){
         window.localStorage.setItem('val',ipt)
         // location.href="./encourage0.html"
-        confirmCamera();
+        if (confirm("Do you want to open your camera?")) {
+            location.href="./selfieView-camera-word.html"
+         } else {
+           location.href="./selfieView-black-word.html"
+         }
     }else{
         alert('Please enter a word')
     }
@@ -14,15 +18,19 @@ nextBtn.onclick=function(){
 
 var skipBtn=document.getElementById('skipBtn');
 skipBtn.onclick = function(){
-    location.href='./selfieView.html'
+    if (confirm("Do you want to open your camera?")) {
+        location.href="./selfieView-camera-skip.html"
+     } else {
+       location.href="./selfieView-black-skip.html"
+     }
 }
 
 
-function confirmCamera() {
-    var txt;
-    if (confirm("Do you want to open your camera?")) {
-       location.href="./selfieView-Camera.html"
-    } else {
-      location.href="./selfieView.html"
-    }
-  }
+// function confirmCamera() {
+//     var txt;
+//     if (confirm("Do you want to open your camera?")) {
+//        location.href="./selfieView-camera-word.html"
+//     } else {
+//       location.href="./selfieView-black-word.html"
+//     }
+//   }
