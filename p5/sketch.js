@@ -28,6 +28,7 @@ let changeTime=0;
 
 function preload() {
     eyeImg = loadImage('images/eye.png');
+    whisper = loadSound("sound/whisper.mp3");
 }
 
 // Setup
@@ -45,6 +46,9 @@ function setup() {
     //     streams.push(stream);
     //     y += symbolSize
     // }
+
+    whisper.loop();
+    whisper.setVolume(0.5);
      
     // Create Eyes
      for (i = 0; i < numEyes; i++) {    
