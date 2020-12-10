@@ -77,8 +77,6 @@ function Eye(x, y) {
         this.pos.add(this.vel);
         this.acc.set(0, 0);
     }
-  
-  
 
     // Draw
     this.display = function() {
