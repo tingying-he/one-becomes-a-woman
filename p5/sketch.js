@@ -9,6 +9,7 @@ let eyeImg;
 let pg;//mouse trace
 
 let changeTime=0;
+let whisper;
 
 // /* comments */
 // var comment = 0;
@@ -47,6 +48,7 @@ function setup() {
     //     y += symbolSize
     // }
 
+    // whisper.play();
     whisper.loop();
     whisper.setVolume(0.5);
      
