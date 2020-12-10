@@ -5,11 +5,11 @@ btn.onclick=function(){
    
 }
 
-var hover=document.getElementById('hover');
-var video = document.getElementById('bodyShape');
-hover.onmouseover=function(){
-video.play();
-}
-hover.onmouseout=function(){
-        video.pause();
-}
+// var hover=document.getElementById('hover');
+// var video = document.getElementById('bodyShape');
+// hover.onmouseover=function(){
+// video.play();
+// }
+// hover.onmouseout=function(){
+//         video.pause();
+// }

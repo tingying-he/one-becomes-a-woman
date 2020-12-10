@@ -10,24 +10,13 @@ let pg;//mouse trace
 
 let changeTime=0;
 let whisper;
+let gif;
 
 
 function preload() {
     eyeImg = loadImage('images/eye.png');
     whisper = loadSound("sound/whisper.mp3");
-
-    // whisper = new p5.AudioIn("sound/whisper.mp3");
-    // whisper.start();
-    // getAudioContext().resume();
-
-    // whisper = async () => {
-    //     try {
-    //         return await loadSound("sound/whisper.mp3");
-    //         console.log("LOAD SUCCESSFULLY!!");
-    //     } catch (e) {
-    //         console.log("LOAD FAIL!!", e);
-    //     }
-    // }
+    gif = loadImage("images/female.gif");
 }
 
 // Setup
@@ -36,14 +25,9 @@ function setup() {
     colorMode(RGB,255,255,255,1);
     // background(0);
 
-
-
     whisper.play();
-    // whisper.resume().then(() => {
-    //     console.log('Playback resumed successfully');
-    // });
-    // whisper.loop();
-    // whisper.setVolume(0.5);
+    gif.pause();
+
      
     // Create Eyes
      for (i = 0; i < numEyes; i++) {    
@@ -122,6 +106,14 @@ function Eye(x, y) {
         }
     }
 }
+function gifControl(){
+    if(mouseX>600 && mouseX <1100 && mouseY > 100 && mouseY < 1100){
+        gif.play();
+    }
+    else{
+        gif.pause();
+    }
+}
 
 
 // Update Canvas
@@ -133,6 +125,8 @@ function draw() {
     pg.strokeWeight(6);
     pg.line(mouseX, mouseY, pmouseX, pmouseY);
     image(pg, 0, 0);
+    image(gif,600,100,500,1000);
+    this.gifControl();
 
 
     var target = createVector(mouseX, mouseY);
