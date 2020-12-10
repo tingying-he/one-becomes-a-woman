@@ -10,11 +10,13 @@ let pg;//mouse trace
 
 let changeTime=0;
 let whisper;
+let gif;
 
 
 function preload() {
     eyeImg = loadImage('images/eye.png');
     whisper = loadSound("sound/whisper.mp3");
+    gif = loadImage("../images/female.gif");
 
     // whisper = new p5.AudioIn("sound/whisper.mp3");
     // whisper.start();
@@ -35,10 +37,8 @@ function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
     colorMode(RGB,255,255,255,1);
     // background(0);
-
-
-
     whisper.play();
+    gif.pause();
     // whisper.resume().then(() => {
     //     console.log('Playback resumed successfully');
     // });
@@ -54,7 +54,6 @@ function setup() {
    
        pg = createGraphics(window.innerWidth, window.innerHeight); //to be fixed
 }
-
 //Particle
 function Eye(x, y) {
   this.x = x;
@@ -122,7 +121,16 @@ function Eye(x, y) {
         }
     }
 }
-
+function playGif(){
+    console.log(mouseX);
+    if(mouseX>100 && mouseY>100){
+        gif.play();
+        
+    }
+    else{
+        gif.pause();
+    }
+}
 
 // Update Canvas
 function draw() {
@@ -133,7 +141,8 @@ function draw() {
     pg.strokeWeight(6);
     pg.line(mouseX, mouseY, pmouseX, pmouseY);
     image(pg, 0, 0);
-
+    image(gif,10,10);
+    this.playGif();
 
     var target = createVector(mouseX, mouseY);
     for (i = 0; i < numEyes; i++) {
@@ -143,4 +152,6 @@ function draw() {
     }
 
 }
+
+
 

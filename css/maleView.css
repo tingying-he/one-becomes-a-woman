@@ -56,13 +56,13 @@ iframe{
     width: 100%;
     height: 100%;
 }
-video{
+/* .bodyShape{
     position: relative;
     top: 100px;
     left: 40%;
     width:480px;
     z-index: 1;
-}
+} */
 .comments{
     z-index: 0;
 }
@@ -71,7 +71,7 @@ video{
     /* pointer-events: none; */
 }
 
-#hover{
+/* #hover{
     position: absolute;
     margin: 0;
     top: 100px;
@@ -79,6 +79,6 @@ video{
     width:480px;
     height: 1000px;
     z-index: 3;
-}
+} */
 
 
