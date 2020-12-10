@@ -6,8 +6,8 @@ html{
 } 
 
 body {
-    background-color: black;
-    background-image:url('../images/launch.gif');
+    background-color: #fef2dc;
+    background-image:url('../images/launch/bg.gif');
     background-size:    100% auto ;                  
     background-repeat:   no-repeat;
     background-position: center center;  
@@ -43,8 +43,9 @@ p{
 
 #btn {
     position: relative;
-    top: 500px; 
-    background-color:#AD0053;
+    top: 300px; 
+    background-color:transparent;
+    /* background: url("/images/launch/btn.png"); */
     border: none;
     color: white;
     text-align: center;
@@ -53,6 +54,15 @@ p{
     font-family: Montserrat;
     font-size: 20px;
     border-radius:40px;
-    width: 120px;
-    height: 40px;
+    /* width: 120px; */
+    /* height: 60px; */
+}
+img {
+    display:block; 
+    margin:0 auto;
+}
+#text{
+    position: relative;
+    top: 200px;
+    width: 1000px;
 }
