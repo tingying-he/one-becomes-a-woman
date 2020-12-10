@@ -6,36 +6,53 @@
 body,html{
     width: 100%;
     height: 100%;
-    background-color: #DFDED4;
+    background-color:#fef2dc;
 }
 .wrap{
+    
+    position: relative;
+    top: 0px; 
+    left: 0;
     width: 100%;
     height: 100%;
-    /* overflow: hidden; */
-    background-color: #DFDED4;
-    /* padding: 200px; */
-}
+    overflow: hidden;
+    /* background-color: #eee; */
+    padding: 200px;
 
+}
 .box{
     /* width: 500px; */
     margin: 0 auto;
 }
-
 h1{
     position: relative;
-    top: 20px; 
+    top: 100px; 
         width: 100%;
         height: 35px;
         line-height: 48px;
         text-align: center;
         font-size: 48px;
         font-weight: normal;
-        color: #000000;
+        color: #ffffff;
         font-family: Montserrat;
     }
-
-button{
-    top:20px;
+input{
+    position: relative;
+    /* top: 200px;  */
+    width:600px;
+    height: 50px;
+    margin: 0 auto;
+    display: block;
+    padding-left: 8px;
+    border-radius:40px;
+    border-width: 2px;
+    border-color: #2e2e2e;
+    font-size:20px;
+    text-indent: 15px;
+}
+button {
+   
+    /* background-color:#AD0053; */
     border: none;
     color: white;
     text-align: center;
@@ -44,8 +61,22 @@ button{
     font-family: Montserrat;
     font-size: 20px;
     border-radius:40px;
-    width: 120px;
-    height: 40px;
+    /* width: 120px;
+    height: 40px; */
+}
+
+#nextBtn{
+    background-color:transparent;
+    position: relative;
+    top: 80%; 
+    z-index: 2;
+}
+#skipBtn{
+    position: relative;
+    top: 110px; 
+    background-color: transparent;
+    text-decoration: underline; 
+    
 }
 
 iframe{
@@ -56,29 +87,18 @@ iframe{
     width: 100%;
     height: 100%;
 }
-video{
+
+img {
+    display:block; 
+    margin:0 auto;
+}
+
+#text{
     position: relative;
-    top: 100px;
-    left: 40%;
-    width:480px;
+    top: 0px;
+    width: 1000px;
+}
+
+.eyes{
     z-index: 1;
 }
-.comments{
-    z-index: 0;
-}
-.eyes{
-    z-index: 2;
-    /* pointer-events: none; */
-}
-
-#hover{
-    position: absolute;
-    margin: 0;
-    top: 100px;
-    left: 40%;
-    width:480px;
-    height: 1000px;
-    z-index: 3;
-}
-
-

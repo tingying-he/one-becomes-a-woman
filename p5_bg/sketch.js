@@ -26,13 +26,14 @@ function setup() {
     for (var i = 0; i <= height / symbolSize; i++) {
         var stream = new Stream();
         // stream.generateSymbols(random(-2000, 0), y);
-        stream.generateSymbols(random(0, 2000), y);//2000
+        stream.generateSymbols(random(0, 2000), y);
         streams.push(stream);
         y += symbolSize
     }
 
-    // textFont('Consolas');
-    textSize(20);
+    textFont('Montserret');
+    textStyle(BOLD);
+    textSize(25);
 }
 
 
@@ -60,11 +61,11 @@ function Symbol(x, y, speed, first, opacity) {
 
 function Stream() {
     this.symbols = [];
-    this.speed = random(1,3); 
+    this.speed = random(1,2); 
 
     this.generateSymbols = function (x, y) {
-        var opacity = 255;
-        var first = round(random(0, 4)) == 1;
+        var opacity = 50;
+        var first = round(random(0, 10)) == 1;//4
         symbol = new Symbol(
             x,
             y,
@@ -81,7 +82,7 @@ function Stream() {
         
         this.symbols.forEach(function (symbol) {
             if (symbol.first) {
-                fill(134, 128, 128, symbol.opacity);  // 134, 128, 128,
+                fill(134, 50, 50, symbol.opacity);  // 134, 128, 128,
             } else {
                 fill(92, 79, 79, symbol.opacity);  // 92, 79, 79,
             }
@@ -97,7 +98,7 @@ function Stream() {
 // Update Canvas
 function draw() {
 
-    background(223,222,212, 500);//150
+    background(254,242,220,400);//223,222,212, 
 
     streams.forEach(function (stream) {
         stream.render();
