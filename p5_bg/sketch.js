@@ -97,7 +97,7 @@ function Stream() {
 // Update Canvas
 function draw() {
 
-    background(223,222,212, 500);//150
+    background(254,242,220,500);//223,222,212, 
 
     streams.forEach(function (stream) {
         stream.render();

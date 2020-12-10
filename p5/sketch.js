@@ -14,7 +14,7 @@ let gif;
 
 
 function preload() {
-    eyeImg = loadImage('images/eye.png');
+    eyeImg = loadImage('images/eye.gif');
     whisper = loadSound("sound/whisper.mp3");
     gif = loadImage("images/female.gif");
 }
@@ -23,12 +23,11 @@ function preload() {
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
     colorMode(RGB,255,255,255,1);
-    // background(0);
 
+    //
     whisper.play();
     gif.pause();
 
-     
     // Create Eyes
      for (i = 0; i < numEyes; i++) {    
         var x = random(width);

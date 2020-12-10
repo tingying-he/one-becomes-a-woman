@@ -1,7 +1,7 @@
 
-var btn=document.getElementById('btn');
+var btn=document.getElementById('nextBtn');
 btn.onclick=function(){
-        location.href="./welcome.html"
+        location.href="./question.html"
    
 }
 
