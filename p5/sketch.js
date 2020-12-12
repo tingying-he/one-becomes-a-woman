@@ -25,6 +25,7 @@ function setup() {
 
   //
   whisper.play();
+  whisper.setVolume(0.005);
   gif.pause();
 
   // Create Eyes
@@ -126,4 +127,12 @@ function draw() {
     eyes[i].display();
     eyes[i].update();
   }
+}
+
+function mousePressed() {
+  whisper.setVolume(1, 50, 0);
+  setTimeout(() => {
+    whisper.setVolume(0.005, 10, 0);
+    // console.log("voice down");
+  }, 1000);
 }
