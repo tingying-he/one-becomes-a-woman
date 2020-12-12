@@ -12,7 +12,7 @@ let whisper;
 let gif;
 
 function preload() {
-  eyeImg = loadImage("https://drive.google.com/file/d/1eK_hR8h5sXOLnGHFL76uBGlevh5pjmt5/view?usp=sharing");
+  eyeImg = loadImage("./images/eye.gif");
   whisper = loadSound("./sound/whisper.mp3");
   gif = loadImage("./images/female.gif");
 }
