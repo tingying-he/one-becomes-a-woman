@@ -12,9 +12,9 @@ let whisper;
 let gif;
 
 function preload() {
-  eyeImg = loadImage("images/eye.gif");
-  whisper = loadSound("sound/whisper.mp3");
-  gif = loadImage("images/female.gif");
+  eyeImg = loadImage("./images/eye.gif");
+  whisper = loadSound("./sound/whisper.mp3");
+  gif = loadImage("./images/female.gif");
 }
 
 // Setup
