@@ -87,20 +87,6 @@ function Eye(x, y) {
     image(eyeImg, this.size, this.size, this.width, this.width);
     pop();
   };
-
-  // Handle Edges
-  // this.edges = function () {
-  //   if (this.pos.y > height) {
-  //     this.pos.y = 0 - this.size;
-  //   } else if (this.pos.y < 0) {
-  //     this.pos.y = height + this.size;
-  //   }
-  //   if (this.pos.x > width + this.size) {
-  //     this.pos.x = 0 - this.size;
-  //   } else if (this.pos.x < 0 - this.size) {
-  //     this.pos.x = width + this.size;
-  //   }
-  // };
 }
 
 function gifControl() {
