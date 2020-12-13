@@ -13,9 +13,9 @@ let gif;
 
 function preload() {
   // eyeImg = loadImage("images/eye.GIF");
-    eyeImg = loadImage("images/eye.png");
+    eyeImg = loadImage("https://github.com/tingying-he/creative-design/blob/master/p5/images/eye2.GIF");
   whisper = loadSound("sound/whisper.mp3");
-  gif = loadImage("https://media.giphy.com/media/rmfwJe8O38bbZISOyo/source.gif");
+  gif = loadImage("https://github.com/tingying-he/creative-design/blob/master/p5/images/female.GIF");
   // gif = loadImage("images/female0.png");
 }
 
