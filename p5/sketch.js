@@ -12,9 +12,11 @@ let whisper;
 let gif;
 
 function preload() {
-  eyeImg = loadImage("images/eye.GIF");
+  // eyeImg = loadImage("images/eye.GIF");
+    eyeImg = loadImage("images/eye.png");
   whisper = loadSound("sound/whisper.mp3");
-  gif = loadImage("images/female.gif");
+  // gif = loadImage("images/female.gif");
+  gif = loadImage("images/female0.png");
 }
 
 // Setup
@@ -26,7 +28,7 @@ function setup() {
   //
   whisper.play();
   whisper.setVolume(0.005);
-  gif.pause();
+  // gif.pause();
 
   // Create Eyes
   for (i = 0; i < numEyes; i++) {
@@ -102,13 +104,13 @@ function Eye(x, y) {
   };
 }
 
-function gifControl() {
-  if (mouseX > 600 && mouseX < 1200 && mouseY > 50 && mouseY < 1250) {
-    gif.play();
-  } else {
-    gif.pause();
-  }
-}
+// function gifControl() {
+//   if (mouseX > 600 && mouseX < 1200 && mouseY > 50 && mouseY < 1250) {
+//     gif.play();
+//   } else {
+//     gif.pause();
+//   }
+// }
 
 // Update Canvas
 function draw() {
@@ -119,7 +121,7 @@ function draw() {
   trace.line(mouseX, mouseY, pmouseX, pmouseY);
   image(trace, 0, 0);
   image(gif, 600, 50, 600, 1200);
-  this.gifControl();
+  // this.gifControl();
 
   var target = createVector(mouseX, mouseY);
   for (i = 0; i < numEyes; i++) {
