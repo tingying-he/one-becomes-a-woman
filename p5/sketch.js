@@ -117,7 +117,7 @@ function draw() {
   gifControl();
   
   image(trace, 0, 0);
-  trace.stroke(47, 46, 46, 80); // fix the stroke style
+  trace.stroke(225, 154, 206, 100); // fix the stroke style 47, 46, 46, 80, ----173, 113, 239----233, 190, 221
   trace.strokeWeight(6);
   trace.line(mouseX, mouseY, pmouseX, pmouseY);
 
