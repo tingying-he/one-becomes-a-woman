@@ -109,10 +109,12 @@ function draw() {
   clear();
 
 
-  animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2);
+  animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2); // 3595
   // createSprite(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2, 600, 1200);
   // sequenceAnimation.originalWidth = 500;
   sequenceAnimation.looping = false;
+
+  // sequenceAnimation.setHeight(500);
   // this.scale = 0.5;
   gifControl();
   
@@ -136,3 +138,4 @@ function mousePressed() {
     // console.log("voice down");
   }, 1000);
 }
+

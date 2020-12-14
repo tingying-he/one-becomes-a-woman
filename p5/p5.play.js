@@ -3580,12 +3580,19 @@ function Animation(pInst) {
 
       if(this.images[frame] !== undefined)
       {
+        // if (this.spriteSheet) {
+        //   var frame_info = this.images[frame].frame;
+        //   pInst.image(this.spriteSheet.image, this.offX, this.offY, frame_info.width, frame_info.height,
+        //     frame_info.x, frame_info.y, frame_info.width, frame_info.height);
+        // } else {
+        //   pInst.image(this.images[frame], this.offX, this.offY);
+        // }
         if (this.spriteSheet) {
           var frame_info = this.images[frame].frame;
           pInst.image(this.spriteSheet.image, this.offX, this.offY, frame_info.width, frame_info.height,
             frame_info.x, frame_info.y, frame_info.width, frame_info.height);
         } else {
-          pInst.image(this.images[frame], this.offX, this.offY);
+          pInst.image(this.images[frame], this.offX, this.offY, window.innerHeight * 730 / 1712, window.innerHeight);
         }
       }
       else
