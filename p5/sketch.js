@@ -24,7 +24,8 @@ function setup() {
   colorMode(RGB, 255, 255, 255, 1);
 
   //
-  whisper.play();
+//   whisper.play();
+  whisper.loop();
   whisper.setVolume(0.005);
   
   gif.pause();
