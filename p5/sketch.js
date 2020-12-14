@@ -10,9 +10,6 @@ let trace; //mouse trace
 let changeTime = 0;
 let whisper;
 let gif;
-let frame;
-let frame1;
-let triger = false;
 
 var sequenceAnimation;
 
@@ -20,11 +17,8 @@ var sequenceAnimation;
 function preload() {
   eyeImg = loadImage("./images/eye2.gif");
   whisper = loadSound("./sound/whisper.mp3");
-  gif = loadImage("./images/female.gif");
-  frame = loadImage("./images/frame0.png");
-  frame1 = loadImage("./images/frame1.png");
 
-  sequenceAnimation = loadAnimation("./images/frame0.png", "./images/frame1.png");
+  sequenceAnimation = loadAnimation("./images/frames/1.png", "./images/frames/36.png");
 
 }
 
@@ -104,10 +98,8 @@ function Eye(x, y) {
 function gifControl() {
   if (mouseX > 600 && mouseX < 1200 && mouseY > 50 && mouseY < 1250) {
     triger = true;
-    // gif.play();
     sequenceAnimation.play();
   } else {
-    // gif.pause();
     sequenceAnimation.stop();
   }
 }
@@ -116,23 +108,12 @@ function gifControl() {
 function draw() {
   clear();
 
-  // try {
-  //   if (triger) {
-  //     image(gif, 600, 50, 600, 1200);
-  //   } else {
-  //     image(frame1, 600, 50, 600, 1200);
-  //   }
-  //   gifControl();
-  // } catch(e) {
-  //   console.log(e);
-  //   image(frame, 600, 50, 600, 1200);
-  // }
 
-  // image(gif, 600, 50, 600, 1200);
-  // this.gifControl();
-
-  animation(sequenceAnimation, 100, 100);
+  animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2);
+  // createSprite(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2, 600, 1200);
+  // sequenceAnimation.originalWidth = 500;
   sequenceAnimation.looping = false;
+  // this.scale = 0.5;
   gifControl();
   
   image(trace, 0, 0);
