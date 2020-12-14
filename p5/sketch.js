@@ -9,7 +9,6 @@ let trace; //mouse trace
 
 let changeTime = 0;
 let whisper;
-let gif;
 
 var sequenceAnimation;
 
@@ -20,6 +19,7 @@ function preload() {
 
   sequenceAnimation = loadAnimation("./images/frames/1.png", "./images/frames/36.png");
 
+  quote = loadSound("./sound/quote.mp3");
 }
 
 // Setup
@@ -31,7 +31,9 @@ function setup() {
   //
 //   whisper.play();
   whisper.loop();
-  whisper.setVolume(0.005);
+  whisper.setVolume(0.02);
+  quote.loop();
+  quote.setVolume(0.5);
   
 
   // Create Eyes
@@ -110,12 +112,8 @@ function draw() {
 
 
   animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2); // 3595
-  // createSprite(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2, 600, 1200);
-  // sequenceAnimation.originalWidth = 500;
-  sequenceAnimation.looping = false;
 
-  // sequenceAnimation.setHeight(500);
-  // this.scale = 0.5;
+  sequenceAnimation.looping = false;
   gifControl();
   
   image(trace, 0, 0);
@@ -132,10 +130,10 @@ function draw() {
 }
 
 function mousePressed() {
-  whisper.setVolume(1, 50, 0);
+  whisper.setVolume(0.3, 2, 0);
   setTimeout(() => {
-    whisper.setVolume(0.005, 10, 0);
+    whisper.setVolume(0.02, 2, 0);//0.005,10,0
     // console.log("voice down");
-  }, 1000);
+  }, 1000); //1000
 }
 
