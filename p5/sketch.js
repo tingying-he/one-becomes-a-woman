@@ -26,6 +26,7 @@ function setup() {
   //
   whisper.play();
   whisper.setVolume(0.005);
+  
   gif.pause();
 
   // Create Eyes

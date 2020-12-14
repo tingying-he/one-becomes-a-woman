@@ -49,6 +49,7 @@ input{
     border-color: #2e2e2e;
     font-size:20px;
     text-indent: 15px;
+    outline: none;
 }
 button {
    
@@ -63,6 +64,7 @@ button {
     border-radius:40px;
     /* width: 120px;
     height: 40px; */
+    outline: none;
 }
 
 #nextBtn{
