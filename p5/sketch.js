@@ -26,7 +26,7 @@ function setup() {
   //
   whisper.play();
   whisper.setVolume(0.005);
-  gif.pause();
+  // gif.pause();
 
   // Create Eyes
   for (i = 0; i < numEyes; i++) {
@@ -101,12 +101,21 @@ function gifControl() {
 function draw() {
   clear();
 
+  
+  try {
+    image(gif, 600, 50, 600, 1200);
+    gifControl();
+  } catch(e) {
+    console.log(e);
+  }
+
+  // image(gif, 600, 50, 600, 1200);
+  // this.gifControl();
+  
+  image(trace, 0, 0);
   trace.stroke(47, 46, 46, 80); // fix the stroke style
   trace.strokeWeight(6);
   trace.line(mouseX, mouseY, pmouseX, pmouseY);
-  image(trace, 0, 0);
-  image(gif, 600, 50, 600, 1200);
-  this.gifControl();
 
   var target = createVector(mouseX, mouseY);
   for (i = 0; i < numEyes; i++) {
