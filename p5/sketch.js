@@ -15,6 +15,7 @@ function preload() {
   eyeImg = loadImage("./images/eye2.gif");
   whisper = loadSound("./sound/whisper.mp3");
   gif = loadImage("./images/female.gif");
+  quote = loadSound("./sound/quote.mp3");
 }
 
 // Setup
@@ -26,7 +27,9 @@ function setup() {
   //
 //   whisper.play();
   whisper.loop();
-  whisper.setVolume(0.005);
+  whisper.setVolume(0.02);
+  quote.loop();
+  quote.setVolume(0.5);
   
   gif.pause();
 
@@ -119,9 +122,9 @@ function draw() {
 }
 
 function mousePressed() {
-  whisper.setVolume(1, 50, 0);
+  whisper.setVolume(0.3, 2, 0);
   setTimeout(() => {
-    whisper.setVolume(0.005, 10, 0);
+    whisper.setVolume(0.02, 2, 0);//0.005,10,0
     // console.log("voice down");
-  }, 1000);
+  }, 1000); //1000
 }
