@@ -12,13 +12,18 @@ nextBtn.onclick=function(){
            location.href="./selfieView-black-word.html"
          }
     }else{
-        alert('Please enter a word')
+        // alert('Please enter a word')
+        if (confirm("To have a better experience, we would like to access your camera")) {
+          location.href="./selfieView-camera-skip.html"
+       } else {
+         location.href="./selfieView-black-skip.html"
+       }
     }
 }
 
 var skipBtn=document.getElementById('skipBtn');
 skipBtn.onclick = function(){
-    if (confirm("Do you want to open your camera?")) {
+    if (confirm("To have a better experience, we would like to access your camera")) {
         location.href="./selfieView-camera-skip.html"
      } else {
        location.href="./selfieView-black-skip.html"
