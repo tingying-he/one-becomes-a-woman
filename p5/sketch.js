@@ -14,7 +14,7 @@ var sequenceAnimation;
 
 
 function preload() {
-  eyeImg = loadImage("./images/eye2.gif");
+  eyeImg = loadImage("https://media.giphy.com/media/jrTbLp6QQqYAz4LG6V/giphy.gif");
   whisper = loadSound("./sound/whisper.mp3");
 
   sequenceAnimation = loadAnimation("./images/frames/1.png", "./images/frames/36.png");
