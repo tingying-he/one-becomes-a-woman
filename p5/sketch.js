@@ -14,7 +14,7 @@ var sequenceAnimation;
 
 
 function preload() {
-  eyeImg = loadImage("./images/eye2.gif");
+  eyeImg = loadImage("./images/eye3.gif");
   whisper = loadSound("./sound/whisper.mp3");
 
   sequenceAnimation = loadAnimation("./images/frames/1.png", "./images/frames/36.png");
