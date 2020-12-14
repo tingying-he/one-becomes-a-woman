@@ -10,11 +10,20 @@ let trace; //mouse trace
 let changeTime = 0;
 let whisper;
 let gif;
+var sequenceAnimation; 
+var femaleImg=[];
+var frameNumber=0;
+
 
 function preload() {
   eyeImg = loadImage("./images/eye2.gif");
   whisper = loadSound("./sound/whisper.mp3");
-  gif = loadImage("./images/female.gif");
+//   gif = loadImage("./images/female.gif");
+//   sequenceAnimation = loadAnimation("images/female01.png","images/female02.png","images/female03.png");
+//   gif = loadImage("./images/female01.png");
+    for(var i=0;i < 11;i++){
+        femaleImg[i]=loadImage("images/female"+i+".png");
+    }
 }
 
 // Setup
@@ -23,11 +32,10 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   colorMode(RGB, 255, 255, 255, 1);
 
-  //
 //   whisper.play();
   whisper.loop();
   whisper.setVolume(0.005);
-  gif.pause();
+//   gif.pause();
 
   // Create Eyes
   for (i = 0; i < numEyes; i++) {
@@ -92,9 +100,14 @@ function Eye(x, y) {
 
 function gifControl() {
   if (mouseX > 600 && mouseX < 1200 && mouseY > 50 && mouseY < 1250) {
-    gif.play();
+    // gif.play();
+    frameNumber++;
+    if(frameNumber > 11) {
+      frameNumber=12;
+    }
   } else {
-    gif.pause();
+    // gif.pause();
+    frameNumber=frameNumber;
   }
 }
 
@@ -106,8 +119,16 @@ function draw() {
   trace.strokeWeight(6);
   trace.line(mouseX, mouseY, pmouseX, pmouseY);
   image(trace, 0, 0);
-  image(gif, 600, 50, 600, 1200);
+//   animation(sequenceAnimation,100,100);
+//   image(gif, 600, 50, 600, 1200);
+
+  image(femaleImg[frameNumber],600,50,600,1200);
+  
   this.gifControl();
+//   frameNumber++;
+//   if(frameNumber > 2) {
+//       frameNumber=0;
+//   }
 
   var target = createVector(mouseX, mouseY);
   for (i = 0; i < numEyes; i++) {
