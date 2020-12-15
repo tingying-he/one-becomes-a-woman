@@ -12,6 +12,9 @@ let whisper;
 
 var sequenceAnimation;
 
+let w1;
+let w2;
+
 
 function preload() {
   eyeImg = loadImage("https://media.giphy.com/media/jrTbLp6QQqYAz4LG6V/giphy.gif");
@@ -44,6 +47,9 @@ function setup() {
   }
 
   trace = createGraphics(window.innerWidth, window.innerHeight); //to be fixed
+
+  w1 = window.innerWidth / 2 - window.innerHeight * 730 / 1712 / 2;
+  w2 = window.innerWidth / 2 + window.innerHeight * 730 / 1712 / 2;
 }
 
 //Particle
@@ -98,8 +104,8 @@ function Eye(x, y) {
 }
 
 function gifControl() {
-  if (mouseX > 600 && mouseX < 1200 && mouseY > 50 && mouseY < 1250) {
-    triger = true;
+  
+  if (mouseX > w1 && mouseX < w2 && mouseY > 50 && mouseY < window.innerHeight) {
     sequenceAnimation.play();
   } else {
     sequenceAnimation.stop();
@@ -112,7 +118,6 @@ function draw() {
 
 
   animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2); // 3595
-
   sequenceAnimation.looping = false;
   gifControl();
   
