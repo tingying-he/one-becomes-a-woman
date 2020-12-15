@@ -65,6 +65,7 @@ button {
     /* width: 120px;
     height: 40px; */
     outline: none;
+    cursor:pointer;
 }
 
 #nextBtn{

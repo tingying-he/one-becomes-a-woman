@@ -57,6 +57,7 @@ p{
     /* width: 120px; */
     /* height: 60px; */
     outline: none;
+    cursor:pointer;
 }
 img {
     display:block; 
