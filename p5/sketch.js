@@ -9,6 +9,7 @@ let trace; //mouse trace
 
 let changeTime = 0;
 let whisper;
+let quote;
 
 var sequenceAnimation;
 
@@ -117,7 +118,7 @@ function draw() {
   clear();
 
 
-  animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2); // 3595
+  animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight * 730 / 1712, window.innerHeight); // 3595
   sequenceAnimation.looping = false;
   gifControl();
   

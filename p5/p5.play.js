@@ -317,6 +317,18 @@ p5.prototype.animation = function(anim, x, y) {
   anim.draw(x, y);
 };
 
+p5.prototype.animation = function(anim, x, y, r) {
+  anim.draw(x, y, r);
+};
+
+p5.prototype.animation = function(anim, x, y, width, height) {
+  anim.draw(x, y, width, height);
+};
+
+p5.prototype.animation = function(anim, x, y, width, height, r) {
+  anim.draw(x, y, width, height, r);
+};
+
 //variable to detect instant presses
 defineLazyP5Property('_p5play', function() {
   return {
@@ -3593,6 +3605,54 @@ function Animation(pInst) {
             frame_info.x, frame_info.y, frame_info.width, frame_info.height);
         } else {
           pInst.image(this.images[frame], this.offX, this.offY, window.innerHeight * 730 / 1712, window.innerHeight);
+        }
+      }
+      else
+      {
+        pInst.print('Warning undefined frame '+frame);
+        //this.isActive = false;
+      }
+
+      pInst.pop();
+    }
+  };
+
+  this.draw = function(x, y, w, h, r) {
+    this.xpos = x;
+    this.ypos = y;
+    this.rotation = r || 0;
+
+    if (this.visible)
+    {
+
+      //only connection with the sprite class
+      //if animation is used independently draw and update are the sam
+      if(!this.isSpriteAnimation)
+        this.update();
+
+      //this.currentImageMode = g.imageMode;
+      pInst.push();
+      pInst.imageMode(CENTER);
+
+      pInst.translate(this.xpos, this.ypos);
+      if (pInst._angleMode === pInst.RADIANS) {
+        pInst.rotate(radians(this.rotation));
+      } else {
+        pInst.rotate(this.rotation);
+      }
+
+      if(this.images[frame] !== undefined)
+      {
+        if (this.spriteSheet) {
+          var frame_info = this.images[frame].frame;
+          frame_info.width = w;
+          frame_info.height = h;
+          pInst.image(this.spriteSheet.image, this.offX, this.offY, frame_info.width, frame_info.height,
+            frame_info.x, frame_info.y, frame_info.width, frame_info.height);
+        } else {
+          this.images[frame].width = w;
+          this.images[frame].height = h;
+          pInst.image(this.images[frame], this.offX, this.offY, w, h);
         }
       }
       else
