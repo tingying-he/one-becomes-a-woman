@@ -4,6 +4,7 @@ var reset = true;
 var eyes = [];
 var numEyes = 100;
 let eyeImg;
+let instructionImg;
 
 let trace; //mouse trace
 
