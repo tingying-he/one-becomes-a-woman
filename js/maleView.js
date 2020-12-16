@@ -14,27 +14,35 @@ btn.onclick=function(){
 //         video.pause();
 // }
 
-// function onReady(callback) {
-//         var intervalId = window.setInterval(function() {
-//           if (document.getElementsByTagName('body')[0] !== undefined) {
-//             window.clearInterval(intervalId);
-//             callback.call(this);
-//           }
-//         }, 2000);
-//       }
+function onReady(callback) {
+        var intervalId = window.setInterval(function() {
+          if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalId);
+            callback.call(this);
+          }
+        }, 2000);
+      }
       
-//       function setVisible(selector, visible) {
-//         document.querySelector(selector).style.display = visible ? 'block' : 'none';
-//       }
+      function setVisible(selector, visible) {
+        document.querySelector(selector).style.display = visible ? 'block' : 'none';
+      }
       
-//       onReady(function() {
-//         setVisible('.page', true);
-//         setVisible('#loading', false);
-//       });
+      onReady(function() {
+        setVisible('.page', true);
+        setVisible('#loading', false);
+      });
 
 
-window.onload = function() 
-    {
-        //display loader on page load 
-        $('#loading').fadeOut();
-    }
+// var iframe2 = document.getElementById('iframe2')
+// iframe2.onload = function() 
+//     {
+//         //display loader on page load 
+//         $('#loading').fadeOut();
+//     }
+
+// $(document).ready(function() {
+
+//   $("#iframe2").load(function() {
+//      $("#loading").hide();
+//   });
+// });
