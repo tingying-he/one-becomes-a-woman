@@ -19,7 +19,7 @@ let w2;
 
 function preload() {
   eyeImg = loadImage("https://media.giphy.com/media/0LU6KkazoNmzu2Gve5/giphy.gif");//https://media.giphy.com/media/jrTbLp6QQqYAz4LG6V/giphy.gif
-  instructionImg = loadImage("images/instruction2_black2.png");
+  instructionImg = loadImage("./images/instruction2_black2.png");
   whisper = loadSound("./sound/whisper.mp3");
 
   sequenceAnimation = loadAnimation("./images/frames/1.png", "./images/frames/36.png");
