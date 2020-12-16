@@ -19,6 +19,7 @@ let w2;
 
 function preload() {
   eyeImg = loadImage("images/eye4.GIF");//https://media.giphy.com/media/jrTbLp6QQqYAz4LG6V/giphy.gif
+  instructionImg = loadImage("images/instruction2_black2.png");
   whisper = loadSound("./sound/whisper.mp3");
 
   sequenceAnimation = loadAnimation("./images/frames/1.png", "./images/frames/36.png");
@@ -32,7 +33,6 @@ function setup() {
  
   createCanvas(window.innerWidth, window.innerHeight);
   colorMode(RGB, 255, 255, 255, 1);
-
   //
 //   whisper.play();
   whisper.loop();
@@ -118,7 +118,8 @@ function draw() {
   clear();
 
 
-  animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2-30, (window.innerHeight-100) * 730 / 1712, window.innerHeight-100); // 3595
+  // animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2-30, (window.innerHeight-100) * 730 / 1712, window.innerHeight-100); // 3595
+  animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2-30, (window.innerHeight-100)* 730 / 1712, window.innerHeight-100); 
   sequenceAnimation.looping = false;
   sequenceAnimation.frameDelay = 6;
   gifControl();
@@ -127,7 +128,9 @@ function draw() {
   trace.stroke(225, 154, 206, 100); // fix the stroke style 47, 46, 46, 80, ----173, 113, 239----233, 190, 221
   trace.strokeWeight(6);
   trace.line(mouseX, mouseY, pmouseX, pmouseY);
-
+  imageMode(CENTER);
+  image(instructionImg,window.innerWidth / 2,window.innerHeight / 2-30+(window.innerHeight-100)/2,794,80);
+  
   var target = createVector(mouseX, mouseY);
   for (i = 0; i < numEyes; i++) {
     eyes[i].seek(target);
