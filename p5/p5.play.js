@@ -317,17 +317,11 @@ p5.prototype.animation = function(anim, x, y) {
   anim.draw(x, y);
 };
 
-p5.prototype.animation = function(anim, x, y, r) {
-  anim.draw(x, y, r);
-};
 
 p5.prototype.animation = function(anim, x, y, width, height) {
   anim.draw(x, y, width, height);
 };
 
-p5.prototype.animation = function(anim, x, y, width, height, r) {
-  anim.draw(x, y, width, height, r);
-};
 
 //variable to detect instant presses
 defineLazyP5Property('_p5play', function() {
@@ -3645,13 +3639,9 @@ function Animation(pInst) {
       {
         if (this.spriteSheet) {
           var frame_info = this.images[frame].frame;
-          frame_info.width = w;
-          frame_info.height = h;
           pInst.image(this.spriteSheet.image, this.offX, this.offY, frame_info.width, frame_info.height,
             frame_info.x, frame_info.y, frame_info.width, frame_info.height);
         } else {
-          this.images[frame].width = w;
-          this.images[frame].height = h;
           pInst.image(this.images[frame], this.offX, this.offY, w, h);
         }
       }
