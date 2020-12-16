@@ -6,7 +6,7 @@ nextBtn.onclick=function(){
     if(ipt){
         window.localStorage.setItem('val',ipt)
         // location.href="./encourage0.html"
-        if (confirm("To have a better experience, we would like to access your camera")) {
+        if (confirm("To continue your experience, you can choose OK to open your camera or Cancel to experience without camera.")) {
             location.href="./selfieView-camera-word.html"
          } else {
            location.href="./selfieView-black-word.html"
