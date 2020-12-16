@@ -86,3 +86,19 @@ iframe{
     height: 90%;
     width: 100%;  
 }
+ 
+
+  
+  #loading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color:#fef2dc;
+    background-image: url("https://media.giphy.com/media/jrTbLp6QQqYAz4LG6V/giphy.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
