@@ -4,31 +4,42 @@ var reset = true;
 var eyes = [];
 var numEyes = 100;
 let eyeImg;
+let instructionImg;
 
 let trace; //mouse trace
 
 let changeTime = 0;
 let whisper;
-let gif;
+let quote;
+
+var sequenceAnimation;
+
+let w1;
+let w2;
+
 
 function preload() {
-  // eyeImg = loadImage("images/eye.GIF");
-    eyeImg = loadImage("https://media.giphy.com/media/fGHkNBVX1TYIPdRtIx/giphy.gif");
-  whisper = loadSound("sound/whisper.mp3");
-  gif = loadImage("https://media.giphy.com/media/vvzTmrtncoxgkOhSY3/giphy.gif");
-  // gif = loadImage("images/female0.png");
+  eyeImg = loadImage("https://media.giphy.com/media/0LU6KkazoNmzu2Gve5/giphy.gif");//https://media.giphy.com/media/jrTbLp6QQqYAz4LG6V/giphy.gif
+  instructionImg = loadImage("https://raw.githubusercontent.com/tingying-he/creative-design/master/p5/images/Instruction2_black2.png");
+  whisper = loadSound("./sound/whisper.mp3");
+
+  sequenceAnimation = loadAnimation("./images/frames/1.png", "./images/frames/36.png");
+
+  quote = loadSound("./sound/quote.mp3");
 }
 
 // Setup
 function setup() {
-  frameRate(20);
+  frameRate(15);
+ 
   createCanvas(window.innerWidth, window.innerHeight);
   colorMode(RGB, 255, 255, 255, 1);
-
   //
-  whisper.play();
-  whisper.setVolume(0.005);
-  gif.pause();
+//   whisper.play();
+  whisper.loop();
+  whisper.setVolume(0.02);
+  quote.loop();
+  quote.setVolume(0.5);
 
   // Create Eyes
   for (i = 0; i < numEyes; i++) {
@@ -38,6 +49,9 @@ function setup() {
   }
 
   trace = createGraphics(window.innerWidth, window.innerHeight); //to be fixed
+
+  w1 = window.innerWidth / 2 - (window.innerHeight-100) * 730 / 1712 / 2;
+  w2 = window.innerWidth / 2 + (window.innerHeight-100) * 730 / 1712 / 2;
 }
 
 //Particle
@@ -47,9 +61,10 @@ function Eye(x, y) {
 
   // Properties
   this.size = random(5, 15);
-  this.maxSpeed = random(5, 10);
+  this.maxSpeed = random(10, 15);
   this.maxForce = random(0.01, 4);
   this.mass = this.size; //this.size * this.size * PI;
+  this.width = random(40, 60);
 
   // Motion
   this.pos = createVector(x, y);
@@ -85,30 +100,17 @@ function Eye(x, y) {
     push();
     translate(this.pos.x, this.pos.y);
     imageMode(CENTER);
-    image(eyeImg, this.size, this.size, 50, 50);
+    image(eyeImg, this.size, this.size, this.width, this.width);
     pop();
-  };
-
-  // Handle Edges
-  this.edges = function () {
-    if (this.pos.y > height) {
-      this.pos.y = 0 - this.size;
-    } else if (this.pos.y < 0) {
-      this.pos.y = height + this.size;
-    }
-    if (this.pos.x > width + this.size) {
-      this.pos.x = 0 - this.size;
-    } else if (this.pos.x < 0 - this.size) {
-      this.pos.x = width + this.size;
-    }
   };
 }
 
 function gifControl() {
-  if (mouseX > 600 && mouseX < 1200 && mouseY > 50 && mouseY < 1250) {
-    gif.play();
+  
+  if (mouseX > w1 && mouseX < w2 && mouseY > 50 && mouseY < window.innerHeight) {
+    sequenceAnimation.play();
   } else {
-    gif.pause();
+    sequenceAnimation.stop();
   }
 }
 
@@ -116,13 +118,20 @@ function gifControl() {
 function draw() {
   clear();
 
-  trace.stroke(47, 46, 46, 80); // fix the stroke style
+
+  // animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2-30, (window.innerHeight-100) * 730 / 1712, window.innerHeight-100); // 3595
+  animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2-30, (window.innerHeight-100)* 730 / 1712, window.innerHeight-100); 
+  sequenceAnimation.looping = false;
+  sequenceAnimation.frameDelay = 6;
+  gifControl();
+  
+  image(trace, 0, 0);
+  trace.stroke(90, 81, 210, 100); // fix the stroke style 47, 46, 46, 80, ----173, 113, 239----233, 190, 221
   trace.strokeWeight(6);
   trace.line(mouseX, mouseY, pmouseX, pmouseY);
-  image(trace, 0, 0);
-  image(gif, 600, 50, 600, 1200);
-  this.gifControl();
-
+  imageMode(CENTER);
+  image(instructionImg,window.innerWidth / 2,window.innerHeight / 2-30+(window.innerHeight-100)/2,794,80);
+  
   var target = createVector(mouseX, mouseY);
   for (i = 0; i < numEyes; i++) {
     eyes[i].seek(target);
@@ -132,9 +141,10 @@ function draw() {
 }
 
 function mousePressed() {
-  whisper.setVolume(1, 50, 0);
+  whisper.setVolume(0.3, 2, 0);
   setTimeout(() => {
-    whisper.setVolume(0.005, 10, 0);
+    whisper.setVolume(0.02, 2, 0);//0.005,10,0
     // console.log("voice down");
-  }, 1000);
+  }, 1000); //1000
 }
+

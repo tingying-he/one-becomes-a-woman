@@ -21,4 +21,6 @@ if (navigator.mediaDevices.getUserMedia) {
 
 var val=window.localStorage.getItem('val'),
     p=document.getElementById('p');
-    p.innerText=val
+    p.innerText=val;
+
+

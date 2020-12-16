@@ -23,7 +23,7 @@ top: 600px;
     font-size: 48px;
     font-weight: normal;
     color: #ffffff;
-    font-family: Montserrat;
+    font-family: Courier Prime;
 }
 
 
@@ -51,7 +51,7 @@ top: 600px;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     background-color: #000000;
     z-index: 0;
     
@@ -61,6 +61,7 @@ top: 600px;
 .video-box #videoElement{
 	display: inline-block;
   vertical-align: baseline;
+  width: 100%;
 }
 
 .video-box .video-img{
@@ -81,8 +82,8 @@ top: 600px;
 p{
     margin: 0;
     position: absolute;
-    top: 120px;
-    left: 650px;
+    top: 13%;
+    left: 40%;
         /* width: 100%; */
         height: 50px;
         line-height: 50px;
@@ -92,5 +93,6 @@ p{
         color: #ffffff;
         font-family: Montserrat;
         z-index: 999;
+      
     }
 
