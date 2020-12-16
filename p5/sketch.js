@@ -29,6 +29,7 @@ function preload() {
 // Setup
 function setup() {
   frameRate(15);
+ 
   createCanvas(window.innerWidth, window.innerHeight);
   colorMode(RGB, 255, 255, 255, 1);
 
@@ -38,7 +39,6 @@ function setup() {
   whisper.setVolume(0.02);
   quote.loop();
   quote.setVolume(0.5);
-  
 
   // Create Eyes
   for (i = 0; i < numEyes; i++) {
@@ -120,6 +120,7 @@ function draw() {
 
   animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2-30, (window.innerHeight-100) * 730 / 1712, window.innerHeight-100); // 3595
   sequenceAnimation.looping = false;
+  sequenceAnimation.frameDelay = 6;
   gifControl();
   
   image(trace, 0, 0);
