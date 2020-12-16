@@ -18,7 +18,7 @@ let w2;
 
 
 function preload() {
-  eyeImg = loadImage("https://media.giphy.com/media/jrTbLp6QQqYAz4LG6V/giphy.gif");
+  eyeImg = loadImage("images/eye4.GIF");//https://media.giphy.com/media/jrTbLp6QQqYAz4LG6V/giphy.gif
   whisper = loadSound("./sound/whisper.mp3");
 
   sequenceAnimation = loadAnimation("./images/frames/1.png", "./images/frames/36.png");
@@ -118,7 +118,7 @@ function draw() {
   clear();
 
 
-  animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight * 730 / 1712, window.innerHeight); // 3595
+  animation(sequenceAnimation, window.innerWidth / 2, window.innerHeight / 2-30, (window.innerHeight-100) * 730 / 1712, window.innerHeight-100); // 3595
   sequenceAnimation.looping = false;
   gifControl();
   
