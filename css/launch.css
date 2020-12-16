@@ -7,7 +7,7 @@ html{
 
 body {
     background-color: #fef2dc;
-    background-image:url('https://media.giphy.com/media/DTPKbLFcJhYvn9ZIAT/giphy.gif');
+    background-image:url('../images/launch/bg.gif');
     background-size:    100% auto ;                  
     background-repeat:   no-repeat;
     background-position: center center;  
