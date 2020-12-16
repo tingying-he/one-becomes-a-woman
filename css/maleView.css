@@ -97,6 +97,7 @@ iframe{
     height: 100vh;
     background-color:#fef2dc;
     background-image: url("https://media.giphy.com/media/0LU6KkazoNmzu2Gve5/giphy.gif");
+    /* background-image: url("https://i.stack.imgur.com/MnyxU.gif"); */
     background-repeat: no-repeat;
     background-position: center;
   }

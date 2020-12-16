@@ -16,11 +16,11 @@ btn.onclick=function(){
 
 function onReady(callback) {
         var intervalId = window.setInterval(function() {
-          if (document.getElementsByTagName('body')[0] !== undefined) {
+          if (document.getElementsByTagName('iframe')[0] !== undefined) {
             window.clearInterval(intervalId);
             callback.call(this);
           }
-        }, 1000);
+        }, 1500);
       }
       
       function setVisible(selector, visible) {
