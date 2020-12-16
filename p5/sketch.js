@@ -49,8 +49,8 @@ function setup() {
 
   trace = createGraphics(window.innerWidth, window.innerHeight); //to be fixed
 
-  w1 = window.innerWidth / 2 - window.innerHeight * 730 / 1712 / 2;
-  w2 = window.innerWidth / 2 + window.innerHeight * 730 / 1712 / 2;
+  w1 = window.innerWidth / 2 - (window.innerHeight-100) * 730 / 1712 / 2;
+  w2 = window.innerWidth / 2 + (window.innerHeight-100) * 730 / 1712 / 2;
 }
 
 //Particle
