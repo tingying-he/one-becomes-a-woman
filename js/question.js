@@ -12,23 +12,23 @@ nextBtn.onclick=function(){
            location.href="./selfieView-black-word.html"
          }
     }else{
-        // alert('Please enter a word')
-        if (confirm("To continue your experience, you can choose OK to open your camera or Cancel to experience without camera.")) {
-          location.href="./selfieView-camera-skip.html"
-       } else {
-         location.href="./selfieView-black-skip.html"
-       }
+        alert('Please enter a word')
+      //   if (confirm("To continue your experience, you can choose OK to open your camera or Cancel to experience without camera.")) {
+      //     location.href="./selfieView-camera-skip.html"
+      //  } else {
+      //    location.href="./selfieView-black-skip.html"
+      //  }
     }
 }
 
-var skipBtn=document.getElementById('skipBtn');
-skipBtn.onclick = function(){
-    if (confirm("To continue your experience, you can choose OK to open your camera or Cancel to experience without camera.")) {
-        location.href="./selfieView-camera-skip.html"
-     } else {
-       location.href="./selfieView-black-skip.html"
-     }
-}
+// var skipBtn=document.getElementById('skipBtn');
+// skipBtn.onclick = function(){
+//     if (confirm("To continue your experience, you can choose OK to open your camera or Cancel to experience without camera.")) {
+//         location.href="./selfieView-camera-skip.html"
+//      } else {
+//        location.href="./selfieView-black-skip.html"
+//      }
+// }
 
 
 // function confirmCamera() {
