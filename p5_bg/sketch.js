@@ -31,7 +31,7 @@ function setup() {
         y += symbolSize
     }
 
-    textFont('Montserret');
+    textFont('Courier Prime');
     textStyle(BOLD);
     textSize(25);
 }
