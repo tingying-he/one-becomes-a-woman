@@ -13,7 +13,7 @@ nextBtn.onclick=function(){
          }
     }else{
         // alert('Please enter a word')
-        if (confirm("To have a better experience, we would like to access your camera")) {
+        if (confirm("To continue your experience, you can choose OK to open your camera or Cancel to experience without camera.")) {
           location.href="./selfieView-camera-skip.html"
        } else {
          location.href="./selfieView-black-skip.html"
@@ -23,7 +23,7 @@ nextBtn.onclick=function(){
 
 var skipBtn=document.getElementById('skipBtn');
 skipBtn.onclick = function(){
-    if (confirm("To have a better experience, we would like to access your camera")) {
+    if (confirm("To continue your experience, you can choose OK to open your camera or Cancel to experience without camera.")) {
         location.href="./selfieView-camera-skip.html"
      } else {
        location.href="./selfieView-black-skip.html"
