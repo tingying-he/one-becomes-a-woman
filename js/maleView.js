@@ -28,7 +28,7 @@ function onReady(callback) {
       }
       
       onReady(function() {
-        setVisible('.page', true);
+        setVisible('.container-fluid', true);
         setVisible('#loading', false);
       });
 
