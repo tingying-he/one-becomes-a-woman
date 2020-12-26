@@ -14,6 +14,7 @@ body {
     height: 100%;
     background-color: black;
     text-align:center;
+    padding: 20px;
 }
 
 #video-camera{
