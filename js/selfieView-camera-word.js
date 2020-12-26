@@ -23,4 +23,8 @@ var val=window.localStorage.getItem('val'),
     p=document.getElementById('word');
     p.innerText=val;
 
+var lookSrc = window.localStorage.getItem('look');
+var lookImg = document.getElementById('look');
+
+lookImg.setAttribute("src",lookSrc);
 
