@@ -6,7 +6,7 @@
 // }
 
 
-var video = document.querySelector("#videoElement");
+var video = document.querySelector("#video-camera");
 
 if (navigator.mediaDevices.getUserMedia) {
   navigator.mediaDevices.getUserMedia({ video: true })
@@ -20,7 +20,7 @@ if (navigator.mediaDevices.getUserMedia) {
 
 
 var val=window.localStorage.getItem('val'),
-    p=document.getElementById('p');
+    p=document.getElementById('word');
     p.innerText=val;
 
 

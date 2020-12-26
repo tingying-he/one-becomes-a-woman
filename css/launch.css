@@ -6,46 +6,40 @@ html{
 } 
 
 body {
-    background-color: #fef2dc;
-    background-image:url('../images/launch/bg.gif');
-    background-size:    100% auto ;                  
-    background-repeat:   no-repeat;
-    background-position: center center;  
+    background-color: #fef2dc;   
     width: 100%;
     height: 100%;
 }
 
-h1{
-position: relative;
-top: 280px; 
+.container-fluid{
     width: 100%;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    font-size: 48px;
-    font-weight: normal;
-    color: #ffffff;
-    font-family: Montserrat;
+    height: 100%;
+    background-color: #fef2dc;
+    background-image:url('../images/launch/bg.gif');
+    background-size:    100% auto;                  
+    background-repeat:   no-repeat;
+    background-position: center center;  
+    text-align:center;
+    padding: 10%;
 }
 
-p{
-    position: relative;
-    top: 450px; 
-        width: 100%;
-        height: 35px;
-        line-height: 35px;
-        text-align: center;
-        font-size: 28px;
-        font-weight: lighter;
-        color: #ffffff;
-        font-family: Montserrat;
-    }
+#text{
+    width: 75%;
+}
 
-#btn {
+#btn{
+    background-color:transparent;
+    outline: none;
+    border: none;
+    cursor:pointer;
+}
+
+
+/* #btn {
     position: relative;
     top: 300px; 
     background-color:transparent;
-    /* background: url("/images/launch/btn.png"); */
+
     border: none;
     color: white;
     text-align: center;
@@ -54,8 +48,7 @@ p{
     font-family: Montserrat;
     font-size: 20px;
     border-radius:40px;
-    /* width: 120px; */
-    /* height: 60px; */
+
     outline: none;
     cursor:pointer;
 }
@@ -67,4 +60,4 @@ img {
     position: relative;
     top: 200px;
     width: 1000px;
-}
+} */
