@@ -46,5 +46,6 @@ body {
 #am-row{
     position: absolute;
     bottom: 20px;
-    left: 20%;
+    left: 0;
+    width: 100%;    
 }
