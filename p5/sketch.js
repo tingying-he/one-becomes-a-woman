@@ -33,7 +33,7 @@ function setup() {
  
   createCanvas(window.innerWidth, window.innerHeight);
   colorMode(RGB, 255, 255, 255, 1);
-  //
+
 //   whisper.play();
   whisper.loop();
   whisper.setVolume(0.02);
