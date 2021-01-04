@@ -1,5 +1,6 @@
 
 var nextBtn=document.getElementById('nextBtn');
+webgazer.stop();
 nextBtn.onclick=function(){
     var ipt=document.getElementById('ipt').value;
     console.log(ipt)
