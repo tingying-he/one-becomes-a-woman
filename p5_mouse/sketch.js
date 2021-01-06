@@ -16,9 +16,6 @@ var sequenceAnimation;
 let w1;
 let w2;
 
-var xprediction;
-var yprediction;
-
 
 function preload() {
   eyeImg = loadImage("images/eye4.GIF");//https://media.giphy.com/media/jrTbLp6QQqYAz4LG6V/giphy.gif
@@ -33,16 +30,6 @@ function preload() {
 // Setup
 function setup() {
   frameRate(15);
-  webgazer.begin();
-  webgazer.setGazeListener(function(data, elapsedTime) {
-    if (data == null) {
-        return;
-    }
-    xprediction = data.x; //these x coordinates are relative to the viewport
-    yprediction = data.y; //these y coordinates are relative to the viewport
-    console.log(xprediction);
-    console.log(elapsedTime); //elapsed time is based on time since begin was called
-}).begin();
  
   createCanvas(window.innerWidth, window.innerHeight);
   colorMode(RGB, 255, 255, 255, 1);
@@ -98,7 +85,7 @@ function Eye(x, y) {
     var steering = p5.Vector.sub(desired, this.vel);
     steering.limit(this.maxForce);
     this.applyForce(steering);
-    // console.log(target);
+    console.log(target);
   };
 
   // Handle Updates
@@ -120,7 +107,7 @@ function Eye(x, y) {
 
 function gifControl() {
   
-  if (xprediction > w1 && xprediction < w2 && yprediction > 50 && yprediction < window.innerHeight) {
+  if (mouseX > w1 && mouseX < w2 && mouseY > 50 && mouseY < window.innerHeight) {
     sequenceAnimation.play();
   } else {
     sequenceAnimation.stop();
@@ -145,7 +132,7 @@ function draw() {
   imageMode(CENTER);
   image(instructionImg,window.innerWidth / 2,window.innerHeight / 2-30+(window.innerHeight-100)/2,794,80);
   
-  var target = createVector(this.xprediction, this.yprediction);//mouseY
+  var target = createVector(mouseX, mouseY);//mouseY
   
   for (i = 0; i < numEyes; i++) {
     eyes[i].seek(target);
