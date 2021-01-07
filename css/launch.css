@@ -107,14 +107,20 @@ p{
     /* margin: 0; */
     position: relative;
     left: 50%; 
-    top: 50%;
+    top: 40%;
     transform: translate(-50%,-50%);
     color: #000;
+    font-size: 20px;
 }
 .options{
     position: absolute;
     width:100%;
     bottom: 20px;
     text-align: center;
+}
+#goEye{
+    width:100px;
+    height:52px;
+    font-size: 20px;
 }
 

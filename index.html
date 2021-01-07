@@ -18,10 +18,14 @@
         <div class="popBox" id="popBox-demo" style="display:none">
             <div class="popBox-mask"></div>
             <div class="popBox-content">
-                <p>Select the way you want to interact next.</p>
+                <p>We recommend you allow camera permission to interact with your real gaze in the following page.</p>
                 <div class="options">
-                    <button id="goMouse">Mouse</button>
-                    <button id="goEye">Eye-tracking</button>
+                    <div>
+                        <button id="goEye">I'd like to! </button>
+                    </div>
+                    <div>
+                        <a id="goMouse">No, I want to use my mouse only.</a>
+                    </div>
                 </div>
                 <a href="javascript:void(0)" id="closeBtn" class="btn-close" οnclick="hidePopBox()">Close</a>
             </div>
