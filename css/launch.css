@@ -6,40 +6,46 @@ html{
 } 
 
 body {
-    background-color: #fef2dc;   
-    width: 100%;
-    height: 100%;
-}
-
-.container-fluid{
-    width: 100%;
-    height: 100%;
     background-color: #fef2dc;
     background-image:url('../images/launch/bg.gif');
-    background-size:    100% auto;                  
+    background-size:    100% auto ;                  
     background-repeat:   no-repeat;
     background-position: center center;  
-    text-align:center;
-    padding: 10%;
+    width: 100%;
+    height: 100%;
 }
 
-#text{
-    width: 75%;
+h1{
+position: relative;
+top: 280px; 
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 48px;
+    font-weight: normal;
+    color: #ffffff;
+    font-family: Montserrat;
 }
 
-#btn{
-    background-color:transparent;
-    outline: none;
-    border: none;
-    cursor:pointer;
-}
+p{
+    position: relative;
+    top: 450px; 
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        font-size: 28px;
+        font-weight: lighter;
+        color: #ffffff;
+        font-family: Montserrat;
+    }
 
-
-/* #btn {
+#btn {
     position: relative;
     top: 300px; 
     background-color:transparent;
-
+    /* background: url("/images/launch/btn.png"); */
     border: none;
     color: white;
     text-align: center;
@@ -48,7 +54,8 @@ body {
     font-family: Montserrat;
     font-size: 20px;
     border-radius:40px;
-
+    /* width: 120px; */
+    /* height: 60px; */
     outline: none;
     cursor:pointer;
 }
@@ -60,4 +67,60 @@ img {
     position: relative;
     top: 200px;
     width: 1000px;
+}
+
+
+.popBox-mask{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: .6;
+    z-index: 999;
+    background-color: #000;
+}
+.popBox-content{
+    position: fixed;
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+}
+
+#popBox-demo .popBox-content{
+    width: 600px;
+    height: 400px;
+    background-color: #fff;
+    text-align: center;
+}
+/* #popBox-demo{
+    line-height: 400px;
+    margin: 0;
 } */
+#popBox-demo .btn-close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+p{
+    /* margin: 0; */
+    position: relative;
+    left: 50%; 
+    top: 40%;
+    transform: translate(-50%,-50%);
+    color: #000;
+    font-size: 20px;
+}
+.options{
+    position: absolute;
+    width:100%;
+    bottom: 20px;
+    text-align: center;
+}
+#goEye{
+    width:100px;
+    height:52px;
+    font-size: 20px;
+}
+
