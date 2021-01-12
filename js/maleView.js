@@ -1,9 +1,7 @@
-
-var btn=document.getElementById('nextBtn');
-btn.onclick=function(){
-        location.href="./question.html"
-   
-}
+var btn = document.getElementById("nextBtn");
+btn.onclick = function () {
+  location.href = "./question.html";
+};
 
 // var hover=document.getElementById('hover');
 // var video = document.getElementById('bodyShape');
@@ -15,28 +13,36 @@ btn.onclick=function(){
 // }
 
 function onReady(callback) {
-        var intervalId = window.setInterval(function() {
-          if (document.getElementsByTagName('body')[0] !== undefined) {
-            window.clearInterval(intervalId);
-            callback.call(this);
-          }
-        }, 2000);
-      }
-      
-      function setVisible(selector, visible) {
-        document.querySelector(selector).style.display = visible ? 'block' : 'none';
-      }
-      
-      onReady(function() {
-        setVisible('.container-fluid', true);
-        setVisible('#loading', false);
-      });
+  var intervalId = window.setInterval(function () {
+    if (document.getElementsByTagName("body")[0] !== undefined) {
+      window.clearInterval(intervalId);
+      callback.call(this);
+    }
+  }, 2000);
+}
 
+function setVisible(selector, visible) {
+  document.querySelector(selector).style.display = visible ? "block" : "none";
+}
+
+onReady(function () {
+  setVisible(".container-fluid", true);
+  setVisible("#loading", false);
+  // introJs().start();
+  introJs().setOptions({
+    steps: [{
+      intro: "Experience with your gazes!"
+    }, {
+      element: document.getElementById('camera'),
+      intro: 'Make sure your face within the box and it\'s green!'
+    }]
+  }).start();
+});
 
 // var iframe2 = document.getElementById('iframe2')
-// iframe2.onload = function() 
+// iframe2.onload = function()
 //     {
-//         //display loader on page load 
+//         //display loader on page load
 //         $('#loading').fadeOut();
 //     }
 
@@ -46,3 +52,13 @@ function onReady(callback) {
 //      $("#loading").hide();
 //   });
 // });
+
+// introJs().setOptions({
+//   steps: [{
+//     intro: "Hello world!"
+//   }, {
+//     element: document.getElementById('#webgazerFaceOverlay'),
+//     intro: "Click here to login!"
+//   }]
+// }).start();
+
