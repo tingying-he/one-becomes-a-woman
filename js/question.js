@@ -1,5 +1,6 @@
 
 var nextBtn=document.getElementById('nextBtn');
+var camera = window.localStorage.getItem('camera')
 
 nextBtn.onclick=function(){
     var ipt=document.getElementById('ipt').value;
@@ -7,7 +8,7 @@ nextBtn.onclick=function(){
     if(ipt){
         window.localStorage.setItem('val',ipt);
         location.href="./selfieView.html";
-        if (confirm("To continue your experience, you can choose OK to open your camera or Cancel to experience without camera.")) {          
+        if (camera == "on") {          
             window.localStorage.setItem('look',"./images/selfie/look-camera.gif");
          } else {
             window.localStorage.setItem('look',"./images/selfie/look-black.gif");
