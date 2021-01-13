@@ -25,16 +25,28 @@
         <div class="popBox" id="popBox-demo" style="display:none">
             <div class="popBox-mask"></div>
             <div class="popBox-content">
-                <p>We recommend you allow camera permission to interact with your real gaze in the following page.</p>
+              <div style="display:block;height:200px">
+                <img src="images/male/open.gif" alt="gaze" class="eyeImg">
+              </div>
+              <div style="display:block;">
+                <img src="images/male/popup_instruction.png" class="intro" alt="instruction" style="width:650px;margin-top:10px;">
+              </div>
+                
                 <div class="options">
                     <div>
-                        <button id="goEye">I'd like to! </button>
+                        <button id="goEye">
+                          <img src="./images/male/selectEye.GIF" height="80px" alt="Next"/>
+                        </button>    
                     </div>
                     <div>
-                        <a id="goMouse">No, I want to use my mouse only.</a>
+                        <!-- <a id="goMouse">No, I want to use my mouse only.</a> -->
+                        <button id="goMouse">
+                          <img src="./images/male/selectMouse.png" height="20px" alt="Next"/>
+                        </button> 
                     </div>
                 </div>
-                <a href="javascript:void(0)" id="closeBtn" class="btn-close" οnclick="hidePopBox()">Close</a>
+                
+                <!-- <a href="javascript:void(0)" id="closeBtn" class="btn-close" οnclick="hidePopBox()">Close</a> -->
             </div>
         </div>
     </div>

@@ -88,10 +88,11 @@ iframe{
 }
 
 #popBox-demo .popBox-content{
-    width: 600px;
-    height: 400px;
-    background-color: #fff;
+    width: 900px;
+    height: 600px;
+    background-color: #292929;
     text-align: center;
+    border-radius: 10px;
 }
 /* #popBox-demo{
     line-height: 400px;
@@ -118,8 +119,32 @@ p{
     text-align: center;
 }
 #goEye{
-    width:100px;
-    height:52px;
-    font-size: 20px;
+    background-color:transparent;
+    outline: none;
+    border: none;
+    cursor:pointer;
+    padding: 3%;
 }
+#goMouse{
+    background-color:transparent;
+    outline: none;
+    border: none;
+    cursor:pointer;
+    /* padding: 5%; */
+}
+.intro{
+    position: relative;
+    /* left: 50%;  */
+    margin-top: 10px;
+}
+.eyeImg{
+    position: absolute;
+    left: 50%;
+    /* top: 20%; */
+    transform: translate(-50%,0);
+    height: 145px;
+    width: 205px;
+    margin-top: 40px;
+}
+
 
