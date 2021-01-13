@@ -26,6 +26,13 @@
                 <input type="text" id="ipt" placeholder="Write a negative word here">
             </div>   
         </div>
+        <div class="row">
+            <!-- <p id="errorText" style="display: none;">Please write a word.</p> -->
+            <div class="col-12 center-block">
+                <img src="images/question/error.png" alt="Please enter a word" id="errorText" style="display: none;"> 
+            </div>
+            
+        </div>
 
         <div class="row">
             <div class="col-12 center-block">
@@ -33,20 +40,6 @@
                     <img src="./images/question/nextBtn.GIF" height="80px" alt="Next"/>
                 </button>  
             </div>       
-        </div>
-
-        <!-- popup -->
-        <div class="popBox" id="popBox-demo" style="display:none">
-            <div class="popBox-mask"></div>
-            <div class="popBox-content">
-              <div style="display:block;height:200px">
-                <img src="images/male/open.gif" alt="gaze" class="eyeImg">
-              </div>
-              <div style="display:block;">
-                <img src="images/male/popup_instruction.png" class="intro" alt="instruction" style="width:650px;margin-top:10px;">
-              </div>
-                <a href="javascript:void(0)" id="closeBtn" class="btn-close" οnclick="hidePopBox()">Close</a>
-            </div>
         </div>
 
     </div>

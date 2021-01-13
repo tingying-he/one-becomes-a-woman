@@ -50,3 +50,14 @@ input{
     cursor:pointer;
     padding: 5%;
 }
+
+#errorText{
+    color: red;
+    width:250px;
+    position: absolute;
+    left: 50%;
+    /* top: 20%; */
+    transform: translate(-50%,0);
+    margin-top:20px;
+
+}

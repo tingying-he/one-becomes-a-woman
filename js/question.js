@@ -1,5 +1,6 @@
 
 var nextBtn=document.getElementById('nextBtn');
+
 nextBtn.onclick=function(){
     var ipt=document.getElementById('ipt').value;
     console.log(ipt)
@@ -12,7 +13,15 @@ nextBtn.onclick=function(){
             window.localStorage.setItem('look',"./images/selfie/look-black.gif");
          }
     }else{
-        alert('Please enter a word');
+        // alert('Please enter a word');
+        showError();
     }
 }
+function showError(){
+    document.getElementById('errorText').style.display = 'block';
+
+}
+
+
+
 
