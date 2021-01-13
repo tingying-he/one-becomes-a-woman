@@ -8,3 +8,10 @@ webgazer.setGazeListener(function(data, elapsedTime) {
 }).begin();
 
 window.saveDataAcrossSessions = true;
+
+const eyes = document.getElementsByClassName("eye");
+for (let i = 0; i < eyes.length; i++) {
+  eyes[i].onclick = function() {
+    this.src = "https://media.giphy.com/media/ule4vhcY1xEKQ/giphy.gif"
+  }
+}
