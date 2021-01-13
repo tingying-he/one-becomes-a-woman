@@ -1,28 +1,39 @@
 var btn = document.getElementById("nextBtn");
-btn.onclick = function () {
-  location.href = "./question.html";
-};
-window.onload=function(){
-  showPopBox();
+if(document.getElementById('popBox-demo')){
+  btn.onclick = function () {
+    location.href = "./question.html";
+  };
+  window.onload=function(){
+    showPopBox();
+  }
 }
-goMouse.onclick = function(){
-  // location.href="./maleView_mouse.html"
-  hidePopBox();
-  window.localStorage.setItem('look',"./images/selfie/look-black.gif");
-  window.localStorage.setItem('camera',"off");
+
+var goMouse = document.getElementById("goMouse");
+if (goMouse){
+  goMouse.onclick = function(){
+    // location.href="./maleView_mouse.html"
+    hidePopBox();
+    window.localStorage.setItem('look',"./images/selfie/look-black.gif");
+    window.localStorage.setItem('camera',"off");
+  }
 }
-goEye.onclick = function(){
-  console.log("selectEye");
-  location.href="./train.html"
-  window.localStorage.setItem('look',"./images/selfie/look-camera.gif");
-  window.localStorage.setItem('camera',"on");
+
+var goEye = document.getElementById("goEye");
+if(goEye){
+  goEye.onclick = function(){
+    console.log("selectEye");
+    location.href="./train.html"
+    window.localStorage.setItem('look',"./images/selfie/look-camera.gif");
+    window.localStorage.setItem('camera',"on");
+    
+  }
+}
+
+// testBtn.onclick= function(){
+//   console.log("testBtn is clicked");
+//   location.href="./train.html";
   
-}
-testBtn.onclick= function(){
-  console.log("testBtn is clicked");
-  location.href="./train.html";
-  
-}
+// }
 
 function showPopBox(){
   document.getElementById('popBox-demo').style.display = 'block';
