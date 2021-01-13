@@ -53,3 +53,25 @@ function setVisible(selector, visible) {
 //   });
 // });
 
+window.onload=function(){
+  showPopBox();
+}
+closeBtn.onclick= function(){
+  hidePopBox();
+}
+goMouse.onclick = function(){
+  // location.href="./maleView_mouse.html"
+  hidePopBox();
+}
+goEye.onclick = function(){
+  location.href="./train.html"
+}
+
+
+function showPopBox(){
+  document.getElementById('popBox-demo').style.display = 'block';
+}
+function hidePopBox(){
+  document.getElementById('popBox-demo').style.display = 'none';
+}
+

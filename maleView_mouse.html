@@ -21,8 +21,24 @@
             <iframe src="p5_bg/index.html" name="iframe1" id="iframe1" class="comments" ></iframe>
             <button id="nextBtn" style="text-align:right"></button>
         </div>
+        <!-- popup -->
+        <div class="popBox" id="popBox-demo" style="display:none">
+            <div class="popBox-mask"></div>
+            <div class="popBox-content">
+                <p>We recommend you allow camera permission to interact with your real gaze in the following page.</p>
+                <div class="options">
+                    <div>
+                        <button id="goEye">I'd like to! </button>
+                    </div>
+                    <div>
+                        <a id="goMouse">No, I want to use my mouse only.</a>
+                    </div>
+                </div>
+                <a href="javascript:void(0)" id="closeBtn" class="btn-close" οnclick="hidePopBox()">Close</a>
+            </div>
+        </div>
     </div>
-    <div id="loading"></div>
+    <!-- <div id="loading"></div> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

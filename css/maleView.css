@@ -67,3 +67,59 @@ iframe{
     width: 320px;
     height: 240px;
 } */
+
+
+.popBox-mask{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: .6;
+    z-index: 999;
+    background-color: #000;
+}
+.popBox-content{
+    position: fixed;
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+}
+
+#popBox-demo .popBox-content{
+    width: 600px;
+    height: 400px;
+    background-color: #fff;
+    text-align: center;
+}
+/* #popBox-demo{
+    line-height: 400px;
+    margin: 0;
+} */
+#popBox-demo .btn-close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+p{
+    /* margin: 0; */
+    position: relative;
+    left: 50%; 
+    top: 40%;
+    transform: translate(-50%,-50%);
+    color: #000;
+    font-size: 20px;
+}
+.options{
+    position: absolute;
+    width:100%;
+    bottom: 20px;
+    text-align: center;
+}
+#goEye{
+    width:100px;
+    height:52px;
+    font-size: 20px;
+}
+
