@@ -19,6 +19,9 @@ let w2;
 var xprediction;
 var yprediction;
 
+let prevData;
+var prediction
+
 
 function preload() {
   // eyeImg = loadImage("images/eye4.GIF");//https://media.giphy.com/media/jrTbLp6QQqYAz4LG6V/giphy.gif
@@ -31,12 +34,14 @@ function preload() {
   sequenceAnimation = loadAnimation("./images/frames/1.png", "./images/frames/36.png");
 
   quote = loadSound("./sound/quote.mp3");
+
+  // prevData = await localforage.getItem('webgazerGlobalData');
 }
 
 // Setup
 function setup() {
   frameRate(15);
-  webgazer.begin();
+  // webgazer.begin();
   webgazer.setGazeListener(function(data, elapsedTime) {
     if (data == null) {
         return;

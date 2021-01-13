@@ -25,19 +25,19 @@ function setVisible(selector, visible) {
   document.querySelector(selector).style.display = visible ? "block" : "none";
 }
 
-onReady(function () {
-  setVisible(".container-fluid", true);
-  setVisible("#loading", false);
-  // introJs().start();
-  introJs().setOptions({
-    steps: [{
-      intro: "Experience with your gazes!"
-    }, {
-      element: document.getElementById('camera'),
-      intro: 'Make sure your face within the box and it\'s green!'
-    }]
-  }).start();
-});
+// onReady(function () {
+//   setVisible(".container-fluid", true);
+//   setVisible("#loading", false);
+//   // introJs().start();
+//   introJs().setOptions({
+//     steps: [{
+//       intro: "Experience with your gazes!"
+//     }, {
+//       element: document.getElementById('camera'),
+//       intro: 'Make sure your face within the box and it\'s green!'
+//     }]
+//   }).start();
+// });
 
 // var iframe2 = document.getElementById('iframe2')
 // iframe2.onload = function()
