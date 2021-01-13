@@ -49,8 +49,8 @@ function setup() {
     }
     xprediction = data.x; //these x coordinates are relative to the viewport
     yprediction = data.y; //these y coordinates are relative to the viewport
-    console.log(xprediction);
-    console.log(elapsedTime); //elapsed time is based on time since begin was called
+    // console.log(xprediction);
+    // console.log(elapsedTime); //elapsed time is based on time since begin was called
 }).begin();
  
   createCanvas(window.innerWidth, window.innerHeight);
@@ -152,8 +152,8 @@ function draw() {
   trace.strokeWeight(6);
   // trace.line(mouseX, mouseY, pmouseX, pmouseY);
   trace.line(xprediction,yprediction,xprediction,yprediction);
-  console.log("xprediction:"+xprediction);
-  console.log("mouseX"+mouseX+";"+"pmouseX"+pmouseX);
+  // console.log("xprediction:"+xprediction);
+  // console.log("mouseX"+mouseX+";"+"pmouseX"+pmouseX);
   imageMode(CENTER);
   image(instructionImg,window.innerWidth / 2,window.innerHeight / 2-30+(window.innerHeight-100)/2,794,80);
   
