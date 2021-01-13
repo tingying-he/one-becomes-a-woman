@@ -37,6 +37,7 @@ function preload() {
 function setup() {
   frameRate(15);
   webgazer.begin();
+  window.saveDataAcrossSessions = true;
   webgazer.setGazeListener(function(data, elapsedTime) {
     if (data == null) {
         return;
