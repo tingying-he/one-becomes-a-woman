@@ -1,7 +1,34 @@
 var btn = document.getElementById("nextBtn");
+window.onload=function(){
+  showPopBox();
+}
+goMouse.onclick = function(){
+  // location.href="./maleView_mouse.html"
+  hidePopBox();
+}
+goEye.onclick = function(){
+  console.log("selectEye");
+  location.href="./train.html"
+}
+testBtn.onclick= function(){
+  console.log("testBtn is clicked");
+  location.href="./train.html"
+}
+
 btn.onclick = function () {
   location.href = "./question.html";
 };
+
+function showPopBox(){
+  document.getElementById('popBox-demo').style.display = 'block';
+}
+function hidePopBox(){
+  document.getElementById('popBox-demo').style.display = 'none';
+}
+
+
+
+
 
 // var hover=document.getElementById('hover');
 // var video = document.getElementById('bodyShape');
@@ -53,25 +80,5 @@ function setVisible(selector, visible) {
 //   });
 // });
 
-window.onload=function(){
-  showPopBox();
-}
-closeBtn.onclick= function(){
-  hidePopBox();
-}
-goMouse.onclick = function(){
-  // location.href="./maleView_mouse.html"
-  hidePopBox();
-}
-goEye.onclick = function(){
-  location.href="./train.html"
-}
 
-
-function showPopBox(){
-  document.getElementById('popBox-demo').style.display = 'block';
-}
-function hidePopBox(){
-  document.getElementById('popBox-demo').style.display = 'none';
-}
 
