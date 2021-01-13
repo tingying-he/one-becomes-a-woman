@@ -1,4 +1,7 @@
 var btn = document.getElementById("nextBtn");
+btn.onclick = function () {
+  location.href = "./question.html";
+};
 window.onload=function(){
   showPopBox();
 }
@@ -14,10 +17,6 @@ testBtn.onclick= function(){
   console.log("testBtn is clicked");
   location.href="./train.html"
 }
-
-btn.onclick = function () {
-  location.href = "./question.html";
-};
 
 function showPopBox(){
   document.getElementById('popBox-demo').style.display = 'block';

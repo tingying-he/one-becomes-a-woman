@@ -86079,6 +86079,7 @@ const params = {
   faceOverlayId: 'webgazerFaceOverlay',
   faceFeedbackBoxId: 'webgazerFaceFeedbackBox',
   gazeDotId: 'webgazerGazeDot',
+  //视频窗口尺寸
   videoViewerWidth: 320,
   videoViewerHeight: 240,
   faceFeedbackBoxRatio: 0.66,

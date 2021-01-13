@@ -1,13 +1,16 @@
 body {
-  background-color: #FFE8C5;
+  background-color: #fef2dc;
 }
 
 #camera {
   position: fixed;
-  left: 23vw;
+  left:340px;
+  /* left: 23vw; */
+  /* margin-left: 10px; */
   top: 10px;
-  font-family: Arial,Helvetica,sans-serif;
-  font-size: 3vh;
+  border-radius: 100px;
+  /* font-family: Arial,Helvetica,sans-serif;
+  font-size: 3vh; */
   width: 20vw;
 }
 
