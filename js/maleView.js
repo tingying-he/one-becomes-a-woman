@@ -8,14 +8,20 @@ window.onload=function(){
 goMouse.onclick = function(){
   // location.href="./maleView_mouse.html"
   hidePopBox();
+  window.localStorage.setItem('look',"./images/selfie/look-black.gif");
+  window.localStorage.setItem('camera',"off");
 }
 goEye.onclick = function(){
   console.log("selectEye");
   location.href="./train.html"
+  window.localStorage.setItem('look',"./images/selfie/look-camera.gif");
+  window.localStorage.setItem('camera',"on");
+  
 }
 testBtn.onclick= function(){
   console.log("testBtn is clicked");
-  location.href="./train.html"
+  location.href="./train.html";
+  
 }
 
 function showPopBox(){

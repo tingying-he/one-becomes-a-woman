@@ -7,8 +7,10 @@
 
 
 var video = document.querySelector("#video-camera");
+var camera = window.localStorage.getItem('camera')
 
-if (navigator.mediaDevices.getUserMedia) {
+if(camera == "on")
+{if (navigator.mediaDevices.getUserMedia) {
   navigator.mediaDevices.getUserMedia({ video: true })
     .then(function (stream) {
       video.srcObject = stream;
@@ -16,7 +18,7 @@ if (navigator.mediaDevices.getUserMedia) {
     .catch(function (err0r) {
       console.log("Something went wrong!");
     });
-}
+}}
 
 
 var val=window.localStorage.getItem('val'),
