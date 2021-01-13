@@ -2,7 +2,7 @@
 
 var btn=document.getElementById('btn');
 btn.onclick=function(){
-        location.href="./maleView_mouse.html"
+        location.href="./popup.html"
 }
 
 

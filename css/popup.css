@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    background-color:#fef2dc;
+}
+
+
+iframe{
+    position: absolute;
+    border:0;
+    border-style: none;
+    width: 100%;
+    height: 100%;
+}
+
+.popBox-mask{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: .6;
+    z-index: 999;
+    background-color: #000;
+}
+.popBox-content{
+    position: fixed;
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+}
+
+#popBox-demo .popBox-content{
+    width: 900px;
+    height: 600px;
+    background-color: #292929;
+    text-align: center;
+    border-radius: 10px;
+}
+/* #popBox-demo{
+    line-height: 400px;
+    margin: 0;
+} */
+#popBox-demo .btn-close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+p{
+    /* margin: 0; */
+    position: relative;
+    left: 50%; 
+    top: 40%;
+    transform: translate(-50%,-50%);
+    color: #000;
+    font-size: 20px;
+}
+.options{
+    position: absolute;
+    width:100%;
+    bottom: 20px;
+    text-align: center;
+}
+#goEye{
+    background-color:transparent;
+    outline: none;
+    border: none;
+    cursor:pointer;
+    padding: 3%;
+}
+#goMouse{
+    background-color:transparent;
+    outline: none;
+    border: none;
+    cursor:pointer;
+    /* padding: 5%; */
+}
+.intro{
+    position: relative;
+    /* left: 50%;  */
+    margin-top: 10px;
+}
+.eyeImg{
+    position: absolute;
+    left: 50%;
+    /* top: 20%; */
+    transform: translate(-50%,0);
+    height: 145px;
+    width: 205px;
+    margin-top: 40px;
+}
