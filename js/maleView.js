@@ -53,12 +53,3 @@ function setVisible(selector, visible) {
 //   });
 // });
 
-// introJs().setOptions({
-//   steps: [{
-//     intro: "Hello world!"
-//   }, {
-//     element: document.getElementById('#webgazerFaceOverlay'),
-//     intro: "Click here to login!"
-//   }]
-// }).start();
-
