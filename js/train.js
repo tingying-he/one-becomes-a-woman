@@ -9,9 +9,16 @@ webgazer.setGazeListener(function(data, elapsedTime) {
 
 window.saveDataAcrossSessions = true;
 
+var eyesNum = 0;
+var nextBtn = document.getElementById("next");
+
 const eyes = document.getElementsByClassName("eye");
 for (let i = 0; i < eyes.length; i++) {
   eyes[i].onclick = function() {
     this.src = "./images/male/open.gif";
+    eyesNum ++
+    if(eyesNum == 5){
+      nextBtn.disabled = false;
+    }
   }
 }
