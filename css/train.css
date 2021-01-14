@@ -30,7 +30,7 @@ body {
 #next {
   display: flex;
   justify-content: center;
-  margin-top: 5px;
+  margin-top: 3px;
   border-radius:20px;
   width: 65vw;
   height: 6vh;
