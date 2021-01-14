@@ -35,13 +35,20 @@ function preload() {
   sequenceAnimation = loadAnimation("./images/frames/1.png", "./images/frames/36.png");
 
   quote = loadSound("./sound/quote.mp3");
-
-  // prevData = await localforage.getItem('webgazerGlobalData');
 }
 
 // Setup
 function setup() {
   frameRate(15);
+
+  //  @inproceedings{papoutsaki2016webgazer,
+  //  author = {Alexandra Papoutsaki and Patsorn Sangkloy and James Laskey and Nediyana Daskalova and Jeff Huang and James Hays},
+  //  title = {WebGazer: Scalable Webcam Eye Tracking Using User Interactions},
+  //  booktitle = {Proceedings of the 25th International Joint Conference on Artificial Intelligence (IJCAI)},
+  //  pages = {3839--3845},
+  //  year = {2016},
+  //  organization={AAAI}
+  // }
   webgazer.begin();
   window.saveDataAcrossSessions = true;
   webgazer.setGazeListener(function(data, elapsedTime) {

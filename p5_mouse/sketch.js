@@ -54,7 +54,8 @@ function setup() {
   w2 = window.innerWidth / 2 + (window.innerHeight-100) * 730 / 1712 / 2;
 }
 
-//Particle
+// Particle
+// @avalibility: https://wow.techbrood.com/fiddle/33714
 function Eye(x, y) {
   this.x = x;
   this.y = y;

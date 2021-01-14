@@ -9,20 +9,17 @@ body,html{
     background-color:#fef2dc;
 }
 
-
-
 #nextBtn:hover {
     background-image: url(../images/male/nextBtn_click.png);
     background-size: cover;
 }
 
-
 #nextBtn{
     background-image: url('../images/male/nextBtn.png');
     background-repeat: no-repeat;
     background-size: cover;
-    height:80px;
-    width: 80px;
+    height: 7vw;
+    width: 7vw;
     position: absolute;
     bottom: 5%;
     right: 5%;
@@ -34,7 +31,7 @@ body,html{
 }
 
 
-iframe{
+iframe {
     position: absolute;
     border:0;
     border-style: none;
