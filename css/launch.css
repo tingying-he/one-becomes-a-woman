@@ -1,20 +1,20 @@
 
 
-html{
+/* html{
     width: 100%;
     height: 100%;
-} 
+}  */
 
 body {
     background-color: #fef2dc;
     background-image:url('../images/launch/bg.gif');
-    background-size:    100% auto ;                  
-    background-repeat:   no-repeat;
-    background-position: center center;  
-    width: 100%;
-    height: 100%;
+    background-size: cover;                  
+    background-repeat: no-repeat;
+    background-position: center;  
+    /* width: 100%;
+    height: 100%; */
 }
-
+/* 
 h1{
 position: relative;
 top: 280px; 
@@ -26,9 +26,9 @@ top: 280px;
     font-weight: normal;
     color: #ffffff;
     font-family: Montserrat;
-}
+} */
 
-p{
+/* p{
     position: relative;
     top: 450px; 
         width: 100%;
@@ -39,7 +39,7 @@ p{
         font-weight: lighter;
         color: #ffffff;
         font-family: Montserrat;
-    }
+    } */
 
 #btn {
     position: relative;
@@ -54,8 +54,6 @@ p{
     font-family: Montserrat;
     font-size: 20px;
     border-radius:40px;
-    /* width: 120px; */
-    /* height: 60px; */
     outline: none;
     cursor:pointer;
 }
@@ -66,7 +64,7 @@ img {
 #text{
     position: relative;
     top: 200px;
-    width: 1000px;
+    width: 70vw;
 }
 
 
