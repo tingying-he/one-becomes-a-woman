@@ -28,6 +28,7 @@ function preload() {
   instructionImg = loadImage("https://raw.githubusercontent.com/tingying-he/one-becomes-a-woman/gh-pages/p5_eye/images/eye_instruction.png");//images/eye_instruction.png
   // whisper = loadSound("./sound/whisper.mp3");
   eyeImg = loadImage("https://media.giphy.com/media/0LU6KkazoNmzu2Gve5/giphy.gif");//https://media.giphy.com/media/jrTbLp6QQqYAz4LG6V/giphy.gif
+  // eyeImg = loadImage("./images/open.png");
   // instructionImg = loadImage("https://raw.githubusercontent.com/tingying-he/creative-design/master/p5/images/Instruction2_black2.png");
   whisper = loadSound("./sound/whisper.mp3");
 
@@ -122,7 +123,7 @@ function Eye(x, y) {
     push();
     translate(this.pos.x, this.pos.y);
     imageMode(CENTER);
-    image(eyeImg, this.size, this.size, this.width, this.width);
+    image(eyeImg, this.size, this.size, 60, 50);
     pop();
   };
 }
@@ -148,8 +149,8 @@ function draw() {
   gifControl();
   
   image(trace, 0, 0);
-  trace.stroke(90, 81, 210, 100); // fix the stroke style 47, 46, 46, 80, ----173, 113, 239----233, 190, 221
-  trace.strokeWeight(6);
+  trace.stroke(255, 39, 143, 80); // fix the stroke style 47, 46, 46, 80, ----173, 113, 239----233, 190, 221
+  trace.strokeWeight(12);
   // trace.line(mouseX, mouseY, pmouseX, pmouseY);
   trace.line(xprediction,yprediction,xprediction,yprediction);
   // console.log("xprediction:"+xprediction);
