@@ -25,7 +25,7 @@ var prediction
 
 function preload() {
   // eyeImg = loadImage("images/eye4.GIF");//https://media.giphy.com/media/jrTbLp6QQqYAz4LG6V/giphy.gif
-  instructionImg = loadImage("https://github.com/tingying-he/one-becomes-a-woman/blob/gh-pages/p5_eye/images/eye_instruction.png");//images/eye_instruction.png
+  instructionImg = loadImage("https://raw.githubusercontent.com/tingying-he/one-becomes-a-woman/gh-pages/p5_eye/images/eye_instruction.png");//images/eye_instruction.png
   // whisper = loadSound("./sound/whisper.mp3");
   eyeImg = loadImage("https://media.giphy.com/media/0LU6KkazoNmzu2Gve5/giphy.gif");//https://media.giphy.com/media/jrTbLp6QQqYAz4LG6V/giphy.gif
   // instructionImg = loadImage("https://raw.githubusercontent.com/tingying-he/creative-design/master/p5/images/Instruction2_black2.png");
